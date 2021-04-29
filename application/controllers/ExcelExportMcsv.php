@@ -18,7 +18,7 @@ class ExcelExportMcsv extends CI_Controller {
 
   $object->setActiveSheetIndex(0);
 
-  $table_columns = array("Username", "Password", "First_name ", "Last_name", "Middle_name", "Institution", "Department", "Respondent_number", "course1", "role1", "group1", "course2", "role2", "group2", "course3", "role3", "group3", "course4", "role4", "group4", "course5", "role5", "group5", "course6", "role6", "group6"
+  $table_columns = array("username", "password", "first_name ", "last_name", "middle_name", "institution", "department", "email", "course1", "role1", "group1", "course2", "role2", "group2", "course3", "role3", "group3", "course4", "role4", "group4", "course5", "role5", "group5", "course6", "role6", "group6"
 );
 
 
@@ -137,7 +137,7 @@ $excel_row++;
  }
 }
 
-  $object_writer = PHPExcel_IOFactory::createWriter($object, 'csv');
+  $object_writer = PHPExcel_IOFactory::createWriter($object, 'CSV');
   header('Content-Type: application/csv');
   header('Content-Disposition: attachment;filename="Masterlist_Info_All.csv"');
   $object_writer->save('php://output');
