@@ -8,10 +8,10 @@
                             <br>
                             <!-- TO BE MODAL -->
                             <form method="post" id="import_form" enctype="multipart/form-data">
-                        <p><label>Select Excel File</label>
-                        <input type="file" name="file" id="file" required accept=".xls, .xlsx" /></p>
-                            <br>
-                            <button type="submit" name="import" class="btn btn-info" style=""><i class="fas fa-upload"></i> Import</button>
+                                <p><label>Select Excel File</label>
+                                <input type="file" name="file" id="file" required accept=".xls, .xlsx" /></p>
+                                <br>
+                                <button type="submit" name="import" class="btn btn-info" style=""><i class="fas fa-upload"></i> Import</button>
                             <!-- <a href="<? base_url('process_download'); ?>" class="btn btn-success">Download Template</a>    -->
                             </form>
                             <br>
@@ -20,9 +20,9 @@
                             </form>
                             <br>
                             
-                            <form method="post" action="<?php echo base_url(); ?>excel_export_data/action">
+                            <!-- <form method="post" action="<?php echo base_url(); ?>excel_export_data/action">
                             <button type="submit" name="export" class="btn btn-success" value=""><i class="fas fa-file-download"></i> Download Template With Records</button>
-                            </form>
+                            </form> -->
                             <br>
                             <br>
                             <div class="table-responsive" id="data">

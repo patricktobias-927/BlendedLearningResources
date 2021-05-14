@@ -65,7 +65,7 @@ class Excel_import extends CI_Controller
     $highestColumn = $worksheet->getHighestColumn();
     for($row=2; $row<=$highestRow; $row++)
     {
-     $LRN = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
+     $respondent_number = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
      $phoenix_student_code = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
      $first_name = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
      $middle_name = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
@@ -84,7 +84,7 @@ class Excel_import extends CI_Controller
      $testing_date1 = $worksheet->getCellByColumnAndRow(15, $row)->getValue();
      $testing_date1R = date('Y-m-d', strtotime($testing_date1));
      $data[] = array(
-      'LRN'   => $LRN,
+      'LRN'   => $respondent_number,
       'phoenix_student_code' => $phoenix_student_code,
       'first_name'    => $first_name,
       'middle_name'   => $middle_name,
@@ -125,27 +125,60 @@ class Excel_import extends CI_Controller
 //             }
   } 
 
-  $result = $this->db->query("SELECT * FROM cbt_students WHERE LRN = '" . $LRN . "' ");
+//   foreach ($data as $update_item) {
+//     $insert_query = $this->db->insert_string($this->db, $update_item['LRN']);
+//     $insert_query = str_replace('INSERT INTO','INSERT IGNORE INTO',$insert_query);
+//     $this->db->query($insert_query);  
+// }
+
+  // $update_query= $this->db->where_in('LRN', $respondent_number)
+  //              ->get($this->db)->result();
+
+  // if($update_query->num_rows() > 0) {
+  //     $this->db->update_batch($data, $this->db);//update if ids exist
+  //     echo "Data Updated Successfully!";
+  //   }
+
+  // else {
+  //   $this->db->insert_batch($data, $this->db);//insert if does not exist
+  //   echo "Data Imported Successfully!";
+  // }
+      
+
+
+  $result = $this->db->query("SELECT * FROM cbt_students WHERE LRN = '" . $respondent_number . "' ");
    $totalrows = $result->num_rows();
       if ($totalrows > 0) {
-        $this->db->where('LRN', $LRN);
-        $this->db->update('cbt_students',$data);
-        //  $this->excel_import_model->update($data);
-         echo "Data Updated Successfully!";
+
+ 
+  
+        $this->db->where('LRN', $respondent_number);
+        // $this->db->update('cbt_students',$data);
+         $this->excel_import_model->update($data);
+          echo "Data Updated Successfully!";
+          
+
       //   $this->excel_import_model->update($data);
  } else { 
   //  $this->excel_import_model->insert($data);
-  $this->db->set('LRN', $LRN);
-  $this->db->insert('cbt_students',$data);
-   echo "Data Imported Successfully!";
+  // $this->db->set('LRN', $LRN);
+  // $this->db->insert('cbt_students',$data);
+
+  $this->db->trans_start();
+  foreach ($data as $item) {
+         $insert_query = $this->db->insert_string('cbt_students', $item);
+         $insert_query = str_replace('INSERT INTO', 'INSERT IGNORE INTO', $insert_query);
+         $this->db->query($insert_query);
+      }
+  $this->db->trans_complete();
+
+ 
+      echo "Data Imported Successfully!";
 
  }
 
 
  }  
- 
-
- 
 }
 
 ?>
