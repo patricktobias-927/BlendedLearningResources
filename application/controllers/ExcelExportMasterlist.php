@@ -33,7 +33,7 @@ class ExcelExportMasterlist extends CI_Controller {
   }
 
   $data = $this->ExcelExportMasterlistModel->fetch_data();
-
+  $data1 = $this->ExcelExportMasterlistModel->fetch_extra();
   $excel_row = 2;
   $institution = "0";
   $role = "5";
@@ -70,61 +70,65 @@ class ExcelExportMasterlist extends CI_Controller {
     $object->getActiveSheet()->setCellValueByColumnAndRow(24, $excel_row, $role);
     $object->getActiveSheet()->setCellValueByColumnAndRow(25, $excel_row, $row->group_); //group
    $excel_row++;
+  }
 
-  for($i = 0; $i < $count; $i++){
-    $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, "lzds_1aa_1"); //username
-    $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, "e.ethanmchale"); //password
-    $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, "Ethan Mchale" 
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, "Anicete"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, "N."
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, "0"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, "Male"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, "2021-0435-01-AA-01"
-  );  //respondent number
-    $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, "demo-exams"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, "5"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, "LZDS 1 Faith"
-  ); //group
-    $object->getActiveSheet()->setCellValueByColumnAndRow(11, $excel_row, "eval-forms"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(12, $excel_row, "5"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(13, $excel_row, "LZDS 1 Faith"
-  ); // group
-    $object->getActiveSheet()->setCellValueByColumnAndRow(14, $excel_row, "en-2018-1"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(15, $excel_row, "5"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(16, $excel_row, "LZDS 1 Faith"
-  ); // group
-    $object->getActiveSheet()->setCellValueByColumnAndRow(17, $excel_row, "ma-2018-1"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(18, $excel_row, "5"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(19, $excel_row, "LZDS 1 Faith"
-  ); //group
-    $object->getActiveSheet()->setCellValueByColumnAndRow(20, $excel_row, "sc-2018-1"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(21, $excel_row, "5"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(22, $excel_row, "LZDS 1 Faith"
-  ); //group
-    $object->getActiveSheet()->setCellValueByColumnAndRow(23, $excel_row, "sc-2018-1"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(24, $excel_row, "5"
-  );
-    $object->getActiveSheet()->setCellValueByColumnAndRow(25, $excel_row, "LZDS 1 Faith"
-    
-  ); //group
-  $excel_row++;
-   }
+  foreach($data1 as $row)
+  {
+    $count = $row->extra_accounts;
+    for($i = 0; $i < $count; $i++){
+      $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, "lzds_1aa_1"); //username
+      $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, "e.mchale1"); //password
+      $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, "Ethan Mchale" 
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, "Anicete"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, "N."
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, "0"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, "Male"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, "2021-0435-01-AA-01"
+    );  //respondent number
+      $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, "demo-exams"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, "5"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, "LZDS 1 Faith"
+    ); //group
+      $object->getActiveSheet()->setCellValueByColumnAndRow(11, $excel_row, "eval-forms"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(12, $excel_row, "5"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(13, $excel_row, "LZDS 1 Faith"
+    ); // group
+      $object->getActiveSheet()->setCellValueByColumnAndRow(14, $excel_row, "en-2018-1"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(15, $excel_row, "5"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(16, $excel_row, "LZDS 1 Faith"
+    ); // group
+      $object->getActiveSheet()->setCellValueByColumnAndRow(17, $excel_row, "ma-2018-1"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(18, $excel_row, "5"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(19, $excel_row, "LZDS 1 Faith"
+    ); //group
+      $object->getActiveSheet()->setCellValueByColumnAndRow(20, $excel_row, "sc-2018-1"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(21, $excel_row, "5"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(22, $excel_row, "LZDS 1 Faith"
+    ); //group
+      $object->getActiveSheet()->setCellValueByColumnAndRow(23, $excel_row, "sc-2018-1"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(24, $excel_row, "5"
+    );
+      $object->getActiveSheet()->setCellValueByColumnAndRow(25, $excel_row, "LZDS 1 Faith"
+      
+    ); //group
+    $excel_row++;
+     }
   }
 
   $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
