@@ -93,10 +93,10 @@
         </div>       
                 
         <div class="row" style="margin-top: 10px;">
-            <div class="col-6">    
+            <!-- <div class="col-6">    
                 <label for="title" style="float:left;">Population: &nbsp; &nbsp;</label>     
                 <input type="text" name="population" placeholder="Population" class="form-control" style="width: 225px;" value="" />
-            </div>
+            </div> -->
             <div class="col-1">    </div>
             <div class="col-5 float-right">  
          <!-- <span>&nbsp;</span> <button type="submit" class="btn btn-success" style="background-color: #FF8C00; border-color: #FF8C00;"><i class="fas fa-plus"></i> Add Another Section</button>           -->
