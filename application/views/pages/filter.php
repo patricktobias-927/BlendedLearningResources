@@ -28,7 +28,7 @@ class Filter extends CI_Controller {
             <tr>
             <td><?= $row['section_id'];?></td>
             <td scope="row" style="font-weight:bold"><?= $row['school_code'];?></th>
-            <td><?= $row['grade'];?></td>
+            <td></td>
             <td><?= $row['section_name'];?></td>
             <td><?= $row['section_code'];?></td>
             <td><?= $row['school_year'];?></td>

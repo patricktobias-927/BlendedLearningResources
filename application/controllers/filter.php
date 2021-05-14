@@ -35,7 +35,7 @@ class Filter extends CI_Controller {
             // $this->db->from('cbt_add_section cas');
             // $this->db->join('cbt_students cs', 'cs.school_code = cas.school_code');
          $this->db->distinct();
-            $this->db->select('cas.school_code, cas.grade, cas.section_name, cas.section_code, cas.school_year, count(cs.student_id) OVER() as population');
+            $this->db->select('cas.school_code, cas.grade, cas.section_name, cas.section_code, cas.school_year, ROUND(count(cas.population) OVER()/count(cas.population) OVER(), 0) as population');
             // $this->db->from('cbt_add_section cas');
             $this->db->join('cbt_students cs', 'cs.section_code = cas.section_code', 'left');
             $data = $this->db->get_where('cbt_add_section cas', ['school_id'=>$schools])->result(); 
