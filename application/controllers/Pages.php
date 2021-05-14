@@ -171,7 +171,6 @@ public function add_batch(){
     $this->form_validation->set_error_delimiters('<div class="alert alert-danger">','</div>');
     $this->load->helper('security');
     $this->form_validation->set_rules('batch', 'Batch', 'trim|required|xss_clean|is_unique[cbt_add_batch.batch_name]'); 
-
     if($this->form_validation->run() == FALSE){
 
     $page = "add_batch";
@@ -211,7 +210,6 @@ public function add_student(){
     $this->form_validation->set_rules('school_name', 'School Name', 'required'); 
     $this->form_validation->set_rules('grade_level', 'Grade Level', 'required'); 
     $this->form_validation->set_rules('section', 'Section', 'required'); 
-
 
     if($this->form_validation->run() == FALSE){
 
