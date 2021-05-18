@@ -1,0 +1,105 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	height: 100%;	
+}
+html body .container-fluid.body-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: black;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: black;
+}
+.sysmptoms-subtitle{
+	color:Red;
+}
+.sysmptoms-title{
+	font-size:18px;
+}
+.custom-control-label{
+	font-size:16px;
+}
+.card-title{
+	font-size:20px;
+}
+#checklist-card{
+  display:none;
+}
+.paddingleft{
+	padding-left:50px;
+}
+#info-card{
+  display:none;
+}
+.validcolor{
+  color: red;
+}
+#agree{
+  -ms-transform: scale(1.5); /* IE */ 
+  -moz-transform: scale(1.5); /* FF */ 
+  -webkit-transform: scale(1.5); /* Safari and Chrome */ 
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5); padding: 5px;
+}
+.justity{
+  text-align: justify; 
+  text-justify: inter-word;
+}
+@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {    
+  body{
+      margin-top:20px;
+      margin-bottom:20px;
+	}
+	.cardmargin{
+    margin-left: 10px;
+    margin-right: 10px;
+    	
+	}
+	.paddingleft{
+		padding-left: 0px;
+  }
+  .paddingleftQ{
+    padding-left:40px;  
+  }
+  .checklistspace{
+    margin-bottom: 18px;
+  }
+}

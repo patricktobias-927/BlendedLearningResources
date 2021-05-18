@@ -1,0 +1,55 @@
+body{
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+  height: 100%;	  
+}
+html body .container-fluid.body-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+}
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+.sysmptoms-subtitle{
+	color:Red;
+}
+.sysmptoms-title{
+	font-size:18px;
+}
+.custom-control-label{
+	font-size:16px;
+}
+.card-title{
+	font-size:20px;
+}
+.validcolor{
+  color: red;
+}
+@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {    
+  body{
+    margin-top:100px;
+  }
+  .cardmargin{
+    margin-left: 10px;
+    margin-right: 10px;    	
+	}
+}

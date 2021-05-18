@@ -1,0 +1,68 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	height: 100%;	
+}
+html body .container-fluid.body-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: black;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: black;
+}
+.sysmptoms-subtitle{
+	color:Red;
+}
+.sysmptoms-title{
+	font-size:18px;
+}
+.custom-control-label{
+	font-size:16px;
+}
+.card-title{
+	font-size:20px;
+}
+.white{
+    color:white;
+}
+.icon-size{
+    height:32px; width: 32px;
+}
