@@ -32,7 +32,9 @@ class LoginController extends CI_Controller{
                     'first_name' => $user_id['first_name'],
                     'last_name' => $user_id['last_name '],
                     'full_name' => $user_id['first_name'].' '.$user_id['last_name'],
-                    // 'access' => $user_id['is_admin'],
+                    'user_name' => $user_id['user_name '],
+                    'password' => $user_id['password'],
+                    'school_code' => $user_id['school_code'],
                     'logged_in' => true
                 );
         
@@ -45,6 +47,24 @@ class LoginController extends CI_Controller{
                     redirect('login');
             }
         }
+    }
+
+    public function logout(){
+
+        $this->session->unset_userdata('firstname');
+        $this->session->unset_userdata('lastname');
+        $this->session->unset_userdata('fullname');
+        $this->session->unset_userdata('user_name');
+        $this->session->unset_userdata('password');
+        $this->session->unset_userdata('school_code');
+        $this->session->unset_userdata('logged_in');
+        
+        $this->load->driver('cache');
+        $this->session->sess_destroy();
+        $this->cache->clean();
+        ob_clean();
+
+        redirect('login');
     }
 }
 

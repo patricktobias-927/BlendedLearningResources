@@ -49,33 +49,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-// $route['preview_and_download'] = 'Pages/preview_and_download';
-// $route['create_masterlist'] = 'Pages/create_masterlist';
-// $route['student_list'] = 'Pages/student_list';
-// $route['add_custom_assessment'] = 'Pages/add_custom_assessment';
-// $route['add_student'] = 'Pages/add_student';
-// $route['add_subject'] = 'Pages/add_subject';
-// $route['process_download'] = 'Download/process_download';
-// $route['bulk_upload_of_students'] = 'Pages/bulk_upload_of_students';
-// $route['school_and_section_list'] = 'Pages/school_and_section_list';
-// $route['delete_grade_level'] = 'Pages/delete_grade_level';
-// $route['delete_batch'] = 'Pages/delete_batch';
-// $route['delete_subject'] = 'Pages/delete_subject';
-// $route['delete_grade_level'] = 'Pages/delete_grade_level';
-// $route['delete_batch'] = 'Pages/delete_batch';
-// $route['delete_section_codes'] = 'Pages/delete_section_codes';
-// $route['add_grade_level'] = 'Pages/add_grade_level';
-// $route['add_section'] = 'Pages/add_section';
-// $route['add_batch'] = 'Pages/add_batch';
-// $route['add_section_codes'] = 'Pages/add_section_codes';
-// $route['addschedule'] = 'Pages/addschedule';
+//HOME
 $route['home'] = 'HomeController/index';
+//LOGIN
 $route['login'] = 'LoginController/login';
-// $route['logout'] = 'Pages/logout';
-// $route['delete'] = 'Pages/delete';
-// $route['add'] = 'Pages/add';
-// $route['edit/(:any)'] = 'Pages/edit/$1';
-// $route['delete/(:any)'] = 'Pages/delete/$1';
+//LOGOUT
+$route['logout'] = 'LoginController/logout';
+//ChangePassword
+$route['changePassword'] = 'ProfileController/index';
+//SubmitPassword
+$route['submitPassword'] = 'ProfileController/changePassword';
+
 $route['default_controller'] = 'LoginController/login';
 
 $route['404_override'] = '';

@@ -2,6 +2,8 @@
 <?= '<p class="alert alert-danger">'.$this->session->flashdata('failed_login').'</p>' ?>
 <?php endif;?>
 
+
+
 <?= form_open('login');?>
 
 <div class="page-wrapper">
@@ -62,6 +64,7 @@
                             </div>
                             <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-white">
                                 2019 © SmartAdmin by&nbsp;<a href='https://www.gotbootstrap.com' class='text-white opacity-40 fw-500' title='gotbootstrap.com' target='_blank'>gotbootstrap.com</a>
+                           
                             </div>
                         </div>
                     </div>
