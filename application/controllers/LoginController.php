@@ -23,21 +23,21 @@ class LoginController extends CI_Controller{
                 $this->load->view('templates/footer');
 
         }else{
-
+            
+            $this->load->model('LoginModel');
             $user_id = $this->LoginModel->login();
 
             if($user_id){
                 $user_data = array(
-                    
+                    'user_id' => $user_id['user_id'],
                     'first_name' => $user_id['first_name'],
-                    'last_name' => $user_id['last_name '],
+                    'last_name' => $user_id['last_name'],
                     'full_name' => $user_id['first_name'].' '.$user_id['last_name'],
-                    'user_name' => $user_id['user_name '],
+                    'user_name' => $user_id['user_name'],
                     'password' => $user_id['password'],
                     'school_code' => $user_id['school_code'],
                     'logged_in' => true
                 );
-        
                     $this->session->set_userdata($user_data);
                     $this->session->set_flashdata('user_loggedin', 'You are now logged in as '.$this->session->fullname);
                     redirect('home');

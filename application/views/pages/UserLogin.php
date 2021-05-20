@@ -3,6 +3,7 @@
 <?php endif;?>
 
 
+      
 
 <?= form_open('login');?>
 
@@ -36,7 +37,7 @@
                                                 <label class="form-label" for="user_name">Username</label>
                                                 <input type="text" id="user_name" name="user_name" class="form-control form-control-lg" placeholder="Username" value="<?= set_value('user_name'); ?>" required>
                                                 <div class="invalid-feedback">No, you missed this one.</div>
-                                                <div class="help-block">Your unique username to app</div>
+                                                <div class="help-block">Your username</div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="password">Password</label>
@@ -44,12 +45,12 @@
                                                 <div class="invalid-feedback">Sorry, you missed this one.</div>
                                                 <div class="help-block">Your password</div>
                                             </div>
-                                            <div class="form-group text-left">
+                                            <!-- <div class="form-group text-left">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="rememberme">
                                                     <label class="custom-control-label" for="rememberme"> Remember me for the next 30 days</label>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="row no-gutters justify-content-center">
                                                 <div class="col-lg-6 pr-lg-1 my-2">
                                                     <button type="submit" class="btn btn-info btn-block btn-lg">Sign In</button>

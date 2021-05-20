@@ -7,8 +7,8 @@
                   <div class="modal-content">
                       <div class="modal-header">
                           <h1 class="modal-title">
-                              <small class="m-0 text-muted">
-                                  You are using a default password
+                              <small class="m-0 ">
+                              You are using a default password.
                               </small>
                           </h1>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -16,13 +16,15 @@
                           </button>
                       </div>
                       <div class="modal-body">
-                      <h2 class="modal-title">
-                              Change Default Password
-                          </h2>
+                      <h3 class="modal-title">
+                              <small class="m-0 ">
+                              Please Click 'Okay' to Change Your Password.
+                              </small>
+                          </h3>
                       </div>
                       <div class="modal-footer">
                           <button type="button" class="btn btn-secondary waves-effect waves-themed" data-dismiss="modal">Close</button>
-                          <a href="<?= base_url();?>changePassword" class="btn btn-primary waves-effect waves-themed">Go</a>
+                          <a href="<?= base_url();?>changePassword" class="btn btn-primary waves-effect waves-themed">Okay</a>
                       </div>
                   </div>
               </div>
@@ -37,20 +39,30 @@
   <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
 
   <!-- SWEET ALERT EXAMPLE1 JS-->
-  <script aria-hidden="true">
+  <script>
 
-            // $(document).ready(function()
-            // {
-            //     "use strict";
+          
+            $(document).ready(function()
+            {
 
-            //     //A basic message
-            //     $("#js-sweetalert2-example-1").on("click", function()
-            //     {
-            //         Swal.fire("asdfsd");
-                   
-            //     }); //A title with a text under
-            // });
-           
+                "use strict";
+
+
+                $("#js-sweetalert2-example-6").on("click", function()
+                {
+                    Swal.fire(
+                    {
+                        icon: 'success',
+                        position: "center",
+                        title: "Your New Password Has Been Saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }); //A confirm dialog, with a function attached to the "Confirm"-button...
+
+
+            });
+
         </script>
  
   </body>

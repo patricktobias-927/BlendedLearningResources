@@ -29,7 +29,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <!-- Optional: page related CSS-->
         <link rel="stylesheet" media="screen, print" href="assets/css/fa-brands.css">
-
+        
         <link rel="stylesheet" media="screen, print" href="assets/css/notifications/sweetalert2/sweetalert2.bundle.css">
         <link rel="stylesheet" media="screen, print" href="assets/css/theme-demo.css">
 
@@ -37,6 +37,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <script src="assets/js/vendors.bundle.js" aria-hidden="true"></script>
         <script src="assets/js/notifications/sweetalert2/sweetalert2.bundle.js" aria-hidden="true"></script>
         <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
+
+     
     </head>
         <body>
             <?php if($this->session->logged_in){?>
@@ -51,6 +53,9 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         <span class="text-white opacity-50 ml-auto mr-2 hidden-sm-down">
                             <!-- Already a member? -->
                         </span>
+                        <a href="<?= base_url();?>changePassword" class="btn-link text-white ml-auto ml-sm-0 mr-5">
+                            <?= $this->session->full_name ?>
+                        </a>
                         <a href="<?= base_url();?>logout" class="btn-link text-white ml-auto ml-sm-0">
                             Sign Out
                         </a>

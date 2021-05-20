@@ -1,3 +1,5 @@
+        
+        <?= form_open('submitPassword');?>
         <div class="page-wrapper">
             <!-- <div class="page-inner bg-brand-gradient"> -->
             <div class="page-inner">
@@ -36,18 +38,19 @@
                                     <div class="card p-4 rounded-plus bg-faded">
                                         <form id="js-login" novalidate="" action="<?= base_url();?>submitPassword">
                                             <div class="form-group">
-                                                <label class="form-label" for="lostaccount">Old Password</label>
-                                                <input type="text" id="lostaccount" class="form-control" placeholder="Old Password" value="<?= $this->session->password?>" disabled>
+                                                <!-- <label class="form-label" for="lostaccount">Old Password</label> -->
+                                                <input type="text" id="lostaccount" class="form-control" placeholder="Old Password" value="<?= $this->session->user_id?>" disabled style="display:none;">
+                                                <input type="text" id="lostaccount" class="form-control" placeholder="Old Password" value="<?= $this->session->password?>" disabled style="display:none;">
                                                 <div class="invalid-feedback">Please, fill out the field</div>
-                                                <div class="help-block">Old Password</div>
-                                                <label class="form-label" for="lostaccount" style="margin-top: 20px;">New Password</label>
+                                                <!-- <div class="help-block">Old Password</div> -->
+                                                <!-- <label class="form-label" for="lostaccount" style="margin-top: 20px;">New Password</label>
                                                 <input type="password" id="lostaccount" class="form-control" placeholder="New Password" value="" required>
                                                 <div class="invalid-feedback">Please, fill out the field</div>
-                                                <div class="help-block">New Password</div>
-                                                <label class="form-label" for="lostaccount" style="margin-top: 20px;">Confirm Password</label>
-                                                <input type="password" id="lostaccount" class="form-control" placeholder="Confirm Password" value="" required>
+                                                <div class="help-block">New Password</div> -->
+                                                <label class="form-label" for="lostaccount" style="margin-top: 20px;">New Password</label>
+                                                <input type="password" id="confirmed_password" name="confirmed_password" class="form-control" placeholder="New Password" value="" required>
                                                 <div class="invalid-feedback">Please, fill out the field</div>
-                                                <div class="help-block">Confirm Password</div>
+                                                <div class="help-block">New Password</div>
                                             </div>
                                             <div class="row no-gutters">
                                                 <div class="col-md-4 ml-auto text-right">
@@ -61,8 +64,15 @@
                         </div>
                         <div class="d-block text-center text-white">
                             2019 © SmartAdmin by&nbsp;<a href='https://www.gotbootstrap.com' class='text-white opacity-40 fw-500' title='gotbootstrap.com' target='_blank'>gotbootstrap.com</a>
+                           
+                           <!-- Password Saved -->
+                            <a href="javascript:void(0);" class="btn btn-outline-primary waves-effect waves-themed" id="js-sweetalert2-example-6" ">Try me!</a>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+       
+        
