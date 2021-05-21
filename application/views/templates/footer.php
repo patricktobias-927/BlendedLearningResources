@@ -33,7 +33,7 @@
 <!-- DEFAULT PASSWORD MODAL BUTTON -->
 <button type="button" class="btn btn-default waves-effect waves-themed" data-toggle="modal" data-target="#default-example-modal-sm-center" id="modal1" style="display: none;">Centered Small</button>
 
-
+  
   <script src="assets/js/vendors.bundle.js" aria-hidden="true"></script>
   <script src="assets/js/notifications/sweetalert2/sweetalert2.bundle.js" aria-hidden="true"></script>
   <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
@@ -42,15 +42,23 @@
   <script>
 
           
-            $(document).ready(function()
-            {
+$(document).ready(function(){
 
-                "use strict";
+"use strict";
 
 
-                $("#js-sweetalert2-example-6").on("click", function()
-                {
-                    Swal.fire(
+$("#js-sweetalert2-example-6").on("click", function(e)
+{
+
+    $.ajax({
+    url: '<?php echo base_url(); ?>submitPassword',
+    type: "POST",
+    cache: false,
+    data: {
+        password : $('#confirmed_password').val(),
+        },
+        success: function () {
+                        Swal.fire(
                     {
                         icon: 'success',
                         position: "center",
@@ -58,15 +66,23 @@
                         showConfirmButton: false,
                         timer: 1500
                     });
-                }); //A confirm dialog, with a function attached to the "Confirm"-button...
+                    // $("#js-login-btn").click()
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                swal.fire("Error Updating!", "Please try again", "error");
+            }
+                    });
+                    e.preventdefault();
+});
+});
+     //A confirm dialog, with a function attached to the "Confirm"-button...
 
 
-            });
+   
 
+            
         </script>
  
   </body>
 </html>
-
-
-
+     

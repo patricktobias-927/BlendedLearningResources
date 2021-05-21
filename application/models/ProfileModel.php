@@ -9,13 +9,15 @@ class ProfileModel extends CI_Model{
             
         }
 
-        public function changePassword(){
+        public function changePassword($user_id,$password){
+         
+            // $user_id = $this->session->user_id;
+            // $data =  $this->input->post('confirmed_password');
+            // $password =  $_POST['confirmed_password'];
 
-            $user_id = $this->session->user_id;
-            $data =  $this->input->post('confirmed_password');
-    
-            $query = $this->db->query("UPDATE tbl_user SET password = '$data' WHERE user_id = $user_id");
+            $query = $this->db->query("UPDATE `tbl_user` SET `password` = '$password' WHERE `user_id` = $user_id");
+        
             return $query;
-          
+         
     }
 }

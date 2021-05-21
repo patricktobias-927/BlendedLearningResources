@@ -1,13 +1,7 @@
-<?php if($this->session->flashdata('failed_login')) : ?>
-<?= '<p class="alert alert-danger">'.$this->session->flashdata('failed_login').'</p>' ?>
-<?php endif;?>
-
-
-      
 
 <?= form_open('login');?>
 
-<div class="page-wrapper">
+        <div class="page-wrapper">
             <div class="page-inner bg-brand-gradient">
                 <div class="page-content-wrapper bg-transparent m-0">
                     <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
@@ -32,8 +26,9 @@
                                         Secure login
                                     </h1> -->
                                     <div class="card p-4 rounded-plus bg-faded">
-                                        <form>
+                                        <form class="progress">
                                             <div class="form-group">
+
                                                 <label class="form-label" for="user_name">Username</label>
                                                 <input type="text" id="user_name" name="user_name" class="form-control form-control-lg" placeholder="Username" value="<?= set_value('user_name'); ?>" required>
                                                 <div class="invalid-feedback">No, you missed this one.</div>

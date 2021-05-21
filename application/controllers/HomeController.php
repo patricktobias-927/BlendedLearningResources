@@ -14,15 +14,18 @@ class HomeController extends CI_Controller{
     else
     {
      
+
         $page = "Home";
+        $this->load->model('SubjectModel');
 
         if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
             show_404();
         }   
 
-        $data['title'] = "Blended Learning Resources";
+        $data['subjects'] = $this->SubjectModel->fetchSubject();
+        $title['title'] = "Blended Learning Resources";
 
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/header', $title);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
 
