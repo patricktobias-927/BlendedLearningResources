@@ -47,7 +47,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><?= $row['subject'];?></h5>
                                         <input id="subject_id" name="subject_id" type="text" style="display: none;" value="<?= $row['subject_id'];?>">
-                                        <p class="card-text ml-5"><?= $row['title'];?></p>
+                                        <!-- <p class="card-text ml-5"><?= $row['title'];?></p> -->
                                     </div>
                                     <div class="card-footer">
                                         <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
@@ -72,6 +72,7 @@
                 </div>
             </div>
         </div>
+        
     
       
      
