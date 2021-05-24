@@ -35,28 +35,45 @@ class ProfileController extends CI_Controller{
             $this->load->model('ProfileModel');
 
             // $user_id = $this->input->post('user_id');
+            $new_password =  $this->input->post('new_password');
             $password =  $this->input->post('confirmed_password');
             $user_id = $this->session->user_id;
             // $password =  $this->input->post('confirmed_password');
-         
-            
-            $page = "ChangeProfile";
-
-            $data['title'] = "BLR Login";
-            $this->load->view('templates/header', $data);
-            $this->load->view('pages/'.$page, $data);
-            $this->load->view('templates/footer');
-    
-            if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
-                show_404();
-            }   
           
-            
-       
-            $this->ProfileModel->changePassword($user_id,$password);
+            $this->form_validation->set_rules('new_password', 'new_password', 'required');
+            $this->form_validation->set_rules('confirmed_password', 'confirmed_password', 'required|callback_check_equal_less['.$this->input->post('new_password').']');
         
-          
-       
+                
+            if($this->form_validation->run() == FALSE){
+
+                $page = "ChangeProfile";
+    
+                $data['title'] = "BLR Login";
+               
+                if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
+                    show_404();
+                }   
+        
+    
+                $this->session->set_flashdata('failed_change','Passwords are not the same!');
+                redirect('changePassword');
+        
+            }else{
+
+                $page = "ChangeProfile";
+    
+                $data['title'] = "BLR Login";
+               
+                $this->ProfileModel->changePassword($user_id,$password);
+
+                $this->session->set_flashdata('changed_password', 'Password changed!');
+
+                $this->load->view('templates/header', $data);
+                $this->load->view('pages/'.$page, $data);
+                $this->load->view('templates/footer');
+
+            }
+              
             // $this->session->unset_userdata('firstname');
             // $this->session->unset_userdata('lastname');
             // $this->session->unset_userdata('fullname');
@@ -71,8 +88,16 @@ class ProfileController extends CI_Controller{
             // ob_clean();
     
             // redirect('login');
+            }
+        public function check_equal_less($new_password,$password)
+        {
+            if ($new_password !== $password)
+            {
+               
+                $this->form_validation->set_message('check_equal_less', 'Passwords are not the same!');
+                return false;       
+            }
+            return true;
+        }
       
-            }   
-      
-    
 }

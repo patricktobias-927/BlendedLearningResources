@@ -38,13 +38,20 @@
                                     <div class="card p-4 rounded-plus bg-faded">
                                         <form id="js-login" name="js-login" novalidate="" action="<?= base_url();?>submitPassword">
                                             <div class="form-group">
+                                            <?= validation_errors();?> 
+                                            <?php if($this->session->flashdata('changed_password')) : ?> 
+                                            <?= '<p class="alert alert-success">'.$this->session->flashdata('changed_password').'</p>' ?>
+                                            <?php endif;?>
+                                            <?php if($this->session->flashdata('failed_change')) : ?> 
+                                            <?= '<p class="alert alert-danger">'.$this->session->flashdata('failed_change').'</p>' ?>
+                                            <?php endif;?>
                                                 <!-- <label class="form-label" for="lostaccount">Old Password</label> -->
                                                 <input type="text" id="user_id" name="user_id" class="form-control" placeholder="Old Password" value="<?= $this->session->user_id?>" disabled style="display:none;">
                                                 <input type="text" id="user_password" name="user_password" class="form-control" placeholder="Old Password" value="<?= $this->session->password?>" disabled style="display:none;">
                                                 <div class="invalid-feedback">Please, fill out the field</div>
                                                 <!-- <div class="help-block">Old Password</div> -->
                                                 <label class="form-label" for="lostaccount" style="margin-top: 20px;">New Password</label>
-                                                <input type="password" id="lostaccount" class="form-control" placeholder="New Password" value="" required>
+                                                <input type="password" id="new_password" name="new_password" class="form-control" placeholder="New Password" value="" required>
                                                 <div class="invalid-feedback">Please, fill out the field</div>
                                                 <div class="help-block">New Password</div>
                                                 <label class="form-label" for="lostaccount" style="margin-top: 20px;">Confirm Password</label>
@@ -54,7 +61,8 @@
                                             </div>
                                             <div class="row no-gutters">
                                                 <div class="col-md-4 ml-auto text-right">
-                                                    <button id="js-login-btn" type="submit" class="btn btn-danger">Submit</button>
+                                                    <button id="js-login" type="submit" class="btn btn-danger">Submit</button>
+                                                    <!-- <button id="js-sweetalert2-example-6" type="submit" class="btn btn-danger">Submit</button> -->
                                                 </div>
                                             </div>
                                         </form>
@@ -62,9 +70,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-block text-center text-white">
-                            2019 © SmartAdmin by&nbsp;<a href='https://www.gotbootstrap.com' class='text-white opacity-40 fw-500' title='gotbootstrap.com' target='_blank'>gotbootstrap.com</a>
-                            <button id="js-sweetalert2-example-6" type="submit" class="btn btn-danger">test</button>
+                        <div class="d-block text-center text-dark">
+                            2021 © Blended Learning Resources&nbsp;
                            <!-- Password Saved 
                             <a href="javascript:void(0);" class="btn btn-outline-primary waves-effect waves-themed" id="js-sweetalert2-example-6">Try me!</a>
         -->

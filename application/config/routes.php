@@ -59,6 +59,8 @@ $route['logout'] = 'LoginController/logout';
 $route['changePassword'] = 'ProfileController/index';
 //SubmitPassword
 $route['submitPassword'] = 'ProfileController/change';
+//Titles
+$route['title'] = 'TitleController/index';
 
 $route['default_controller'] = 'LoginController/login';
 

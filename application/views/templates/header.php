@@ -39,12 +39,15 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!--datatable-->
+        <link rel="stylesheet" media="screen, print" href="css/datagrid/datatables/datatables.bundle.css">
      
     </head>
         <body>
   
      
-        <?php if($this->session->logged_in){?>
+    <?php if($this->session->logged_in){?>
         <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
             <div class="d-flex align-items-center container p-0">
                 <div class="progress progress-bar"></div>
@@ -65,5 +68,5 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                     </a>
             </div>
         </div>               
-            <?php } ?>
+    <?php } ?>
       
