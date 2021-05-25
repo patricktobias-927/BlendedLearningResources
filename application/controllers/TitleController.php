@@ -45,7 +45,7 @@ class TitleController extends CI_Controller{
         }
         else
         {
-         
+            $this->load->helper('directory');
             $this->load->model('TitleModel');
             $page = "TitleView";
     
@@ -53,7 +53,9 @@ class TitleController extends CI_Controller{
             if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
                 show_404();
             }   
-    
+            
+            $data['path'] = directory_map('./files/', 1);
+
             $title_id =  $this->input->post('title_id');
             
             $data['title'] = $this->TitleModel->titleView($title_id);
@@ -66,6 +68,7 @@ class TitleController extends CI_Controller{
          
             }   
         }
+
     
 
         

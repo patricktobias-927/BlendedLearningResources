@@ -3,7 +3,12 @@
         <div class="panel-container show"  style="width: 100%;height: auto;">
             <div class="panel-content">
                 <div class="panel-tag">
-                   <i>Subject Items</i>
+               <a href="<?= base_url();?>home" class="btn btn-primary waves-effect waves-themed"> <i class="fal fa-arrow-circle-left"> Back</i> </a>
+                
+                   <i style="float: right;">
+                   
+                    Subject Items
+                   </i>
                 </div>
                 <!-- datatable start -->
                 <table id="dt-basic-example" class="table table-bordered table-hover w-100" style="width: 100%;height: 100%; ">
