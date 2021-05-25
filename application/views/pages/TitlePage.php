@@ -19,18 +19,16 @@
                     <?php foreach($title as $row){?>
                     
                         <tr>
-                            <td style="display:none;"><input type="text" value="<?= $row['title_id'];?>"></td>
                             <td><?= $row['title'];?></td>
                             <td style="max-width: 20px;"> 
-
-                            <a href="<?= base_url();?>files/<?= $row['title'];?>" id="view" class="btn btn-primary waves-effect waves-themed">View</a>
-                            
-                            
-                            <a href="<?= base_url();?>files/<?= $row['title'];?>" id="view" type="submit" class="btn btn-primary waves-effect waves-themed" download>Download</a>
+                                <form id="title_id" name="title_id" action="<?= base_url();?>viewTitle" method="post">
+                                    <input style="display:none;" id="title_id" name="title_id" type="text" value="<?= $row['title_id'];?>">
+                                    <button type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
+                                    <a href="<?= base_url();?>files/<?= $row['title'];?>" id="view" type="submit" class="btn btn-primary waves-effect waves-themed" download>Download</a>
+                                </form>
 
                             </td>
                         </tr>
-                        <!-- <iframe class="tabContent" name="myIframe" src="<?= base_url();?>files/pdf.pdf" marginheight="8" marginwidth="8" style="margin:0; padding:0; width:100%; height:800px; border:none; overflow:hidden;' scrolling='no';"></iframe> -->
 
                     <?php } ?>  
 

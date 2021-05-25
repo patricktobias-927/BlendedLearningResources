@@ -33,12 +33,22 @@ class ProfileController extends CI_Controller{
     public function change(){
 
             $this->load->model('ProfileModel');
+            $this->load->library('encryption');
 
+            //ENCRYPT
+            // $key = bin2hex($this->encryption->create_key(16));
+        
+            // $options = [
+            //     'cost' => 12
+            //     // 'salt' => $key,
+            // ];
+            // $password =  password_hash($this->input->post('confirmed_password'), PASSWORD_BCRYPT, $options);
+           
             // $user_id = $this->input->post('user_id');
             $new_password =  $this->input->post('new_password');
-            $password =  $this->input->post('confirmed_password');
+        
             $user_id = $this->session->user_id;
-            // $password =  $this->input->post('confirmed_password');
+            $password =  md5($this->input->post('confirmed_password'));
           
             $this->form_validation->set_rules('new_password', 'new_password', 'required');
             $this->form_validation->set_rules('confirmed_password', 'confirmed_password', 'required|callback_check_equal_less['.$this->input->post('new_password').']');

@@ -25,6 +25,9 @@ class LoginController extends CI_Controller{
         }else{
             
             $this->load->model('LoginModel');
+
+            $data_user = $this->LoginModel->login($username, $password);
+
             $user_id = $this->LoginModel->login();
 
             if($user_id){
@@ -35,7 +38,7 @@ class LoginController extends CI_Controller{
                     'full_name' => $user_id['first_name'].' '.$user_id['last_name'],
                     'user_name' => $user_id['user_name'],
                     'password' => $user_id['password'],
-                    'school_code' => $user_id['school_code'],
+                    'school_id' => $user_id['school_id'],
                     'logged_in' => true
                 );
                     $this->session->set_userdata($user_data);

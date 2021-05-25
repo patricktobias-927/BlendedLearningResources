@@ -25,4 +25,17 @@ class TitleModel extends CI_Model{
             return $query->result_array();
           
     }
+
+    public function titleView($title_id){
+         
+       
+            $query = $this->db->query("SELECT tt.title as title FROM tbl_user us
+            
+            LEFT JOIN tbl_subscription sub ON (us.school_id = sub.school_id)
+            LEFT JOIN tbl_title tt ON (sub.subject_id = tt.subject_id)
+
+            WHERE tt.title_id = $title_id");
+            return $query->result_array();
+        
+    }
 }

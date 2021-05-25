@@ -31,10 +31,8 @@ class TitleController extends CI_Controller{
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
 
-     
         }   
     }
-    
 
     public function view(){
 
@@ -49,16 +47,16 @@ class TitleController extends CI_Controller{
         {
          
             $this->load->model('TitleModel');
-            $page = "TitlePage";
+            $page = "TitleView";
     
     
             if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
                 show_404();
             }   
     
-            $subject_id =  $this->input->post('subject_id');
+            $title_id =  $this->input->post('title_id');
             
-            $data['title'] = $this->TitleModel->fetchTitle($subject_id);
+            $data['title'] = $this->TitleModel->titleView($title_id);
             $title['title'] = "Blended Learning Resources";
     
             $this->load->view('templates/header', $title);
@@ -68,4 +66,7 @@ class TitleController extends CI_Controller{
          
             }   
         }
+    
+
+        
 }
