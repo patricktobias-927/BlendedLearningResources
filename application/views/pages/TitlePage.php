@@ -28,6 +28,7 @@
                             <td style="max-width: 20px;"> 
                                 <form id="title_id" name="title_id" action="<?= base_url();?>viewTitle" method="post">
                                     <input style="display:none;" id="title_id" name="title_id" type="text" value="<?= $row['title_id'];?>">
+                                    <input style="display:none;" id="title" name="title" type="text" value="<?= $row['title'];?>">
                                     <button type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
                                     <a href="<?= base_url();?>files/<?= $row['title'];?>" id="view" type="submit" class="btn btn-primary waves-effect waves-themed" download>Download</a>
                                 </form>

@@ -47,6 +47,8 @@ class TitleController extends CI_Controller{
         {
             $this->load->helper('directory');
             $this->load->model('TitleModel');
+            $this->load->model('RecursiveModel');
+
             $page = "TitleView";
     
     
@@ -57,8 +59,23 @@ class TitleController extends CI_Controller{
             $data['path'] = directory_map('./files/', 1);
 
             $title_id =  $this->input->post('title_id');
-            
+            $titlename =  $this->input->post('title');
+            // $titleview = $this->TitleModel->titleView($title_id);
             $data['title'] = $this->TitleModel->titleView($title_id);
+            $rootDir = 'files';
+            $filename =  $titlename;
+            $data['path'] = $this->RecursiveModel->transferPath($rootDir,$filename);
+            // $data['path'] = 'files/PPH_PLUMA.pdf';
+            // $path = $this->RecursiveModel->transferPath()->getFilePath('files','PPH_PLUMA.pdf');
+
+            // if (trim($path)!='notfound') {
+            //     print_r($path);
+            // }
+            // else{
+            //     echo "file not found";
+            // }
+
+            
             $title['title'] = "Blended Learning Resources";
     
             $this->load->view('templates/header', $title);

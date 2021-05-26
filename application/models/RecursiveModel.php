@@ -1,9 +1,16 @@
 <?php
 
-class RecursiveController extends CI_Controller{
+class RecursiveModel extends CI_Model{
+
+    public function __construct(){
+
+        $this->load->helper(array('url', 'download'));
+        $this->load->database();
+        
+    }
     
-    public function transferPath(){
-        function getFilePath($rootDir,$filename){
+    public function transferPath($rootDir,$filename){
+            function getFilePath($rootDir,$filename){
  
             $dirF = $rootDir.'/'.$filename;
             if (file_exists($dirF)) {
@@ -30,13 +37,13 @@ class RecursiveController extends CI_Controller{
             
         }
         
-        $finalFilePath = getFilePath('files','PPH_PLUMA.pdf');
-
-        if (trim($finalFilePath)!='notfound') {
-            print_r($finalFilePath);
-        }
-        else{
-            echo "file not found";
-        }
+        $finalFilePath = getFilePath($rootDir,$filename);
+        return   $finalFilePath;
+        // if (trim($finalFilePath)!='notfound') {
+        //     print_r($finalFilePath);
+        // }
+        // else{
+        //     echo "file not found";
+        // }
     }   
 }
