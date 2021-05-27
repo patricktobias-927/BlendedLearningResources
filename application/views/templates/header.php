@@ -29,7 +29,9 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <!-- Optional: page related CSS-->
         <link rel="stylesheet" media="screen, print" href="assets/css/fa-brands.css">
-        
+        <link rel="stylesheet" media="screen, print" href="assets/css/fa-solid.css">
+        <link rel="stylesheet" media="screen, print" href="assets/css/fa-regular.css">
+
         <link rel="stylesheet" media="screen, print" href="assets/css/notifications/sweetalert2/sweetalert2.bundle.css">
         <link rel="stylesheet" media="screen, print" href="assets/css/theme-demo.css">
 
@@ -39,34 +41,224 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="assets/js/vendors.bundle.js" aria-hidden="true"></script>
 
         <!--datatable-->
-        <link rel="stylesheet" media="screen, print" href="css/datagrid/datatables/datatables.bundle.css">
-     
+        <link rel="stylesheet" media="screen, print" href="assets/css/datagrid/datatables/datatables.bundle.css">
+    =
     </head>
         <body>
   
      
     <?php if($this->session->logged_in){?>
-        <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
-            <div class="d-flex align-items-center container p-0">
-                <div class="progress progress-bar"></div>
-                    <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9">
-                        <a href="<?= base_url();?>home" class="page-logo-link press-scale-down d-flex align-items-center">
-                            <img src="assets/img/logo.png" alt="BLR" aria-roledescription="logo">
-                            <span class="page-logo-text mr-1">Blended Learning Resources</span>
+       
+
+    <div class="page-wrapper">
+        <div class="page-inner" >
+            <!-- BEGIN Left Aside -->
+            <aside class="page-sidebar">
+                <div class="page-logo text-justify" >
+                
+                    <a href="<?= base_url();?>home" class="page-logo-link press-scale-down d-flex align-items-center position-relative">
+                    
+                        <span class="page-logo-text mr-1" >BLENDED LEARNING <br> RESOURCES</span>
+                        <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                    </a>
+                </div>
+            
+                <!-- BEGIN PRIMARY NAVIGATION -->
+                <nav id="js-primary-nav" class="primary-nav" role="navigation">
+                    <div class="nav-filter">
+                        <div class="position-relative">
+                            <input type="text" id="nav_filter_input" placeholder="Filter menu" class="form-control" tabindex="0">
+                            <a href="#" onclick="return false;" class="btn-primary btn-search-close js-waves-off" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar">
+                                <i class="fal fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                
+                    <ul id="js-nav-menu" class="nav-menu">
+                        
+
+                        </li>
+                        <li class="nav-title">Files</li>
+                        <li class="open">
+                            <a class="resources-link waves-effect waves-themed" id="resources-link" href="#" title="Theme Settings" data-filter-tags="theme settings" aria-expanded="true">
+
+                                <i class="fas fa-folder folder" style="color: #808080;"></i>
+                                <span class="nav-link-text resources" style="color: #808080;" data-i18n="nav.theme_settings">Resources</span>
+                          </a>
+                            <ul style="background-color: rgb(245, 245, 245); display: block;">
+                                <li>
+                                    <a class="subject-link waves-effect waves-themed" href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
+                                    
+                                        <span class="nav-link-text subject" style="color: #808080;" data-i18n="nav.theme_settings_how_it_works"><i class="fas fa-folder folder"></i> &nbsp;FILIPINO</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        
+                        <li>
+                            <a class="resources-link" id="resources-link" href="#" title="Theme Settings" data-filter-tags="theme settings" aria-expanded="true">
+                                <i class="far fa-clock" style="color: #808080;"></i>
+                                <span class="nav-link-text resources" style="color: #808080;" data-i18n="nav.theme_settings">Recent</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="resources-link" id="resources-link" href="#" title="Theme Settings" data-filter-tags="theme settings" aria-expanded="true">
+                                <i class="far fa-star" style="color: #808080;"></i>
+                                <span class="nav-link-text resources" style="color: #808080;" data-i18n="nav.theme_settings">Favorites</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="resources-link" id="resources-link" href="#" title="Theme Settings" data-filter-tags="theme settings" aria-expanded="true">
+                                <i class="far fa-file" style="color: #808080;"></i>
+                                <span class="nav-link-text resources" style="color: #808080;" data-i18n="nav.theme_settings">Sample files</span>
+                            </a>
+                        </li>
+                        
+            
+                </nav>
+            </aside>
+            <!-- END Left Aside -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN Page Header -->
+                <header class="page-header" role="banner">
+                    <!-- we need this logo when user switches to nav-function-top -->
+                    <div class="page-logo">
+                        <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
+                            <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                            <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+                            <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                            <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
                         </a>
                     </div>
-                    <span class="text-white opacity-50 ml-auto mr-2 hidden-sm-down">
-                        <!-- Already a member? -->
-                    </span>
-                    <a href="<?= base_url();?>changePassword" class="btn-link text-white ml-auto ml-sm-0 mr-5">
-                        <?= $this->session->full_name ?>
+                    <!-- DOC: nav menu layout change shortcut -->
+                    <div class="hidden-md-down dropdown-icon-menu position-relative">
+                        <a href="#" class="header-btn btn js-waves-off" data-action="toggle" data-class="nav-function-hidden" title="Hide Navigation">
+                            <i class="ni ni-menu"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-minify" title="Minify Navigation">
+                                    <i class="ni ni-minify-nav"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-fixed" title="Lock Navigation">
+                                    <i class="ni ni-lock-nav"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- DOC: mobile button appears during mobile width -->
+                    <div class="hidden-lg-up">
+                        <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+                            <i class="ni ni-menu"></i>
+                        </a>
+                    </div>
+                    <div class="search">
+                        <form class="app-forms hidden-xs-down" role="search" action="page_search.html" autocomplete="off">
+                            <input type="text" id="search-field" placeholder="Search for anything" class="form-control" tabindex="1">
+                            <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
+                                <i class="fal fa-times"></i>
+                            </a>
+                        </form>
+                    </div>
+                    <div class="ml-auto d-flex">
+                        <!-- activate app search icon (mobile) -->
+                        <div class="hidden-sm-up">
+                            <a href="#" class="header-icon" data-action="toggle" data-class="mobile-search-on" data-focus="search-field" title="Search">
+                                <i class="fal fa-search"></i>
+                            </a>
+                        </div>
+                        <!-- app settings -->
+                        <div class="hidden-md-down">
+                            <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-settings">
+                                <i class="fal fa-cog"></i>
+                            </a>
+                        </div>
+                        <!-- app shortcuts -->
+                    
+                    
+                        <!-- app message -->
+                        
+                        <!-- app notification -->
+                        <div>
+                            <a href="#" class="header-icon" data-toggle="dropdown" title="You got 11 notifications">
+                                <i class="fal fa-bell"></i>
+                                <span class="badge badge-icon">11</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-xl">
+                                
+                                <div class="py-2 px-3 bg-faded d-block rounded-bottom text-right border-faded border-bottom-0 border-right-0 border-left-0">
+                                    <a href="#" class="fs-xs fw-500 ml-auto">view all notifications</a>
+                                </div>
+                            </div>
+                        </div>
+        <!-- app user menu -->
+        <div>
+            <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2" aria-expanded="true">
+            
+                <i class="fas fa-user-circle fa-3x" style=""></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-animated dropdown-lg" x-placement="top-start" style="position: absolute; will-change: top, left; top: 5px; left: 803px;">
+                <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+                    <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
+                        <span class="mr-2">
+                    
+                            <img src="assets/img/avatar-admin.png" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
+                            
+                        </span>
+                        <div class="info-card-text">
+                            <div class="fs-lg text-truncate text-truncate-lg"> <?= $this->session->full_name ?></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-divider m-0"></div>
+                    <a href="<?= base_url();?>changePassword" class="dropdown-item" >
+                        <span data-i18n="drpdwn.reset_layout">Change Password</span>
                     </a>
-                    <a href="<?= base_url();?>logout" class="btn-link text-white ml-auto ml-sm-0">
-                        Sign Out
+                    <div class="dropdown-divider m-0"></div>
+                    <a href="#" class="dropdown-item" data-action="app-fullscreen">
+                        <span data-i18n="drpdwn.fullscreen">Fullscreen</span>
+                        <i class="float-right text-muted fw-n">F11</i>
                     </a>
+                    <a href="#" class="dropdown-item" data-action="app-print">
+                        <span data-i18n="drpdwn.print">Print</span>
+                        <i class="float-right text-muted fw-n">Ctrl + P</i>
+                    </a>
+                <div class="dropdown-multilevel dropdown-multilevel-left">
+                    <div class="dropdown-menu">
+                        <a href="#?lang=fr" class="dropdown-item" data-action="lang" data-lang="fr">Français</a>
+                        <a href="#?lang=en" class="dropdown-item active" data-action="lang" data-lang="en">English (US)</a>
+                        <a href="#?lang=es" class="dropdown-item" data-action="lang" data-lang="es">Español</a>
+                        <a href="#?lang=ru" class="dropdown-item" data-action="lang" data-lang="ru">Русский язык</a>
+                        <a href="#?lang=jp" class="dropdown-item" data-action="lang" data-lang="jp">日本語</a>
+                        <a href="#?lang=ch" class="dropdown-item" data-action="lang" data-lang="ch">中文</a>
+                    </div>
+                </div>
+                <div class="dropdown-divider m-0"></div>
+                <a class="dropdown-item fw-500 pt-3 pb-3" href="<?= base_url();?>logout">
+                    <span data-i18n="drpdwn.page-logout">Logout</span>
+                    <span class="float-right fw-n"><?= $this->session->full_name ?></span>
+                </a>
             </div>
-        </div>               
+        </div>
+    </div>
+</header>
+            <!-- END Page Header -->
+            <!-- BEGIN Page Content -->
+            <!-- the #js-page-content id is needed for some plugins to initialize -->
+            <main id="js-page-content" role="main" class="page-content" style="background-color: #fff; padding-right: 0;
+            padding-top: 0; padding-bottom: 0;">
+              
+              <!-- <ol class="breadcrumb page-breadcrumb">
+                    <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
+                </ol> -->
+
     <?php } ?>
-      

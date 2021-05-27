@@ -1,4 +1,4 @@
-<div id="panel-11" class="panel d-flex justify-content-center" style="width: 50%; heigth: auto; margin: auto; margin-top: 100px;">
+<div id="panel-11" class="panel d-flex justify-content-center" style="width: 80%; heigth: auto; margin: auto; margin-top: 50px;">
     <div class="panel-hdr">
         <div class="panel-container show"  style="width: 100%;height: auto;">
             <div class="panel-content">

@@ -355,9 +355,9 @@ RESULT:
 
 */
 .page-logo, .page-sidebar, .nav-footer, .bg-brand-gradient {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(51, 148, 225, 0.18)), to(transparent));
-  background-image: linear-gradient(270deg, rgba(51, 148, 225, 0.18), transparent);
-  background-color: #584475; }
+  /* background-image: -webkit-gradient(linear, right top, left top, from(rgba(51, 148, 225, 0.18)), to(transparent)); */
+  /* background-image: linear-gradient(270deg, rgba(51, 148, 225, 0.18), transparent); */
+  background-color: #F5F5F5; }
 
 /*
 %shadow-hover {
@@ -893,10 +893,12 @@ html {
             flex: 1 0 auto; }
 
 .page-logo-text {
-  margin-left: 0.5rem;
-  font-weight: 300;
-  font-size: 1rem;
-  color: #fff;
+
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight:  900;
+  font-size:large;
+  color: #FF7800;
   display: block;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -1181,13 +1183,26 @@ html {
 .nav-title {
   text-transform: uppercase;
   margin: 0;
-  color: #8268a8;
+  color: #808080;
   padding: 1rem 2rem;
   margin-top: 1.5rem;
   font-size: 0.7rem;
   letter-spacing: 1px;
   font-weight: 500; }
 
+  .subject-link:hover {background-color: #FED198 !important; border: 2px solid #FED198 ;
+    border-top-right-radius: 25px; border-bottom-right-radius: 25px; }
+  .subject-link:hover .subject {color: #FF7800 !important; }
+  .subject-link:hover .folder {color: #FF7800 !important; }
+  .subject { font-weight: bold; }
+
+  .resources-link:hover {background-color: #FED198 !important; border: 2px solid #FED198 ;
+    border-top-right-radius: 25px; border-bottom-right-radius: 25px; }
+  .resources-link:hover .resources {color: #FF7800 !important; }
+  .resources-link:hover .folder {color: #FF7800 !important; }
+  .resources { font-weight: bold; }
+  
+  
 .nav-menu {
   padding: 0;
   list-style: none;
@@ -1229,7 +1244,7 @@ html {
         font-weight: 400; }
         .nav-menu li.active > a:hover > [class*='fa-'],
         .nav-menu li.active > a:hover > .ni {
-          color: #a8a6ac; }
+          color: #FF8433; }
       .nav-menu li.active > ul {
         display: block; }
       .nav-menu li.active:not(.open) > a:before {

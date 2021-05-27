@@ -1,3 +1,36 @@
+    <?php if($this->session->logged_in){?>
+
+                   </main>   
+                </div>
+            </div>
+        </div>
+    
+        <!-- to add more items, please make sure to change the variable '$menu-items: number;' in your _page-components-shortcut.scss -->
+        <nav class="shortcut-menu d-none d-sm-block">
+            <input type="checkbox" class="menu-open" name="menu-open" id="menu_open" />
+            <label for="menu_open" class="menu-open-button ">
+                <span class="app-shortcut-icon d-block"></span>
+            </label>
+            <a href="#" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Scroll Top">
+                <i class="fal fa-arrow-up"></i>
+            </a>
+            <a href="page_login-alt.html" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
+                <i class="fal fa-sign-out"></i>
+            </a>
+            <a href="#" class="menu-item btn" data-action="app-fullscreen" data-toggle="tooltip" data-placement="left" title="Full Screen">
+                <i class="fal fa-expand"></i>
+            </a>
+            <a href="#" class="menu-item btn" data-action="app-print" data-toggle="tooltip" data-placement="left" title="Print page">
+                <i class="fal fa-print"></i>
+            </a>
+            <a href="#" class="menu-item btn" data-action="app-voice" data-toggle="tooltip" data-placement="left" title="Voice command">
+                <i class="fal fa-microphone"></i>
+            </a>
+        </nav>
+        
+    <?php } ?>
+<!-- END OF PAGE -->
+
 <!-- SWEET ALERT EXAMPLE JS 1-->
 <!-- <a href="javascript:void(0);" class="btn btn-outline-primary waves-effect waves-themed" id="js-sweetalert2-example-1" style="display: none;">Try me!</a> -->
 
@@ -37,7 +70,7 @@
   <script src="assets/js/vendors.bundle.js" aria-hidden="true"></script>
   <script src="assets/js/notifications/sweetalert2/sweetalert2.bundle.js" aria-hidden="true"></script>
   <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
-
+  <script src="js/datagrid/datatables/datatables.bundle.js"></script>
   <!-- SWEET ALERT EXAMPLE1 JS-->
   <script>
 
@@ -78,8 +111,20 @@ $("#js-sweetalert2-example-6").on("click", function(e)
      //A confirm dialog, with a function attached to the "Confirm"-button...
 
 
-   
+    
+        var toggler = document.getElementsByClassName("caret");
+        var i;
 
+        for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+        }
+
+
+        //DATATABLES
+    
             
         </script>
  

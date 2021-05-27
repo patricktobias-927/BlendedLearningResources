@@ -16,11 +16,13 @@ class HomeController extends CI_Controller{
      
 
         $page = "Home";
+        $this->load->model('TitleModel');
         $this->load->model('SubjectModel');
 
         if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
             show_404();
         }   
+        
 
         $data['subjects'] = $this->SubjectModel->fetchSubject();
         $title['title'] = "Blended Learning Resources";
