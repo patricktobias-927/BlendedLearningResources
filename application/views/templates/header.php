@@ -34,7 +34,9 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
 
         <link rel="stylesheet" media="screen, print" href="assets/css/notifications/sweetalert2/sweetalert2.bundle.css">
         <link rel="stylesheet" media="screen, print" href="assets/css/theme-demo.css">
-
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        
         <!--JS-->
         <script src="assets/js/vendors.bundle.js" aria-hidden="true"></script>
         <script src="assets/js/notifications/sweetalert2/sweetalert2.bundle.js" aria-hidden="true"></script>
@@ -45,7 +47,6 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
 
         <!--datatable-->
         <link rel="stylesheet" media="screen, print" href="assets/css/datagrid/datatables/datatables.bundle.css">
-    =
     </head>
         <body>
   
@@ -60,8 +61,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                 <div class="page-logo text-justify" >
                 
                     <a href="<?= base_url();?>home" class="page-logo-link press-scale-down d-flex align-items-center position-relative">
-                    
-                        <span class="page-logo-text mr-1" >BLENDED LEARNING <br> RESOURCES</span>
+            
+                        <span class="page-logo-text mr-1" style="font-family: 'Roboto', sans-serif !important;">BLENDED LEARNING <br> RESOURCES</span>
                         <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
                     </a>
                 </div>

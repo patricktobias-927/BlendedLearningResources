@@ -77,7 +77,9 @@
                 <thead class="bg-warning-500">
                     <tr>
                         <th style="display:none;"></th>
-                        <th>Title</th>
+                        <th>Name</th>
+                        <th>Last Update</th>
+                        <th>File size</th>
                         <th >Action</th>
                     </tr>
                 </thead>
@@ -88,6 +90,8 @@
                     <tr>
                          
                         <td><i class="fa fa-folder fa-1x" style="color: #808080;">&nbsp;</i> <?= $row['subject'];?></td>
+                        <td> <?= $row['last_update'];?></td>
+                        <td>--</td>
                         <td style=""> 
                             <form id="title_id" name="title_id" action="<?= base_url();?>title" method="post">
                                 <input style="display:none;" id="subject_id" name="subject_id" type="text" value="<?= $row['subject_id'];?>">
@@ -114,133 +118,26 @@
         <div class="col-sm-" style="">
         </div>
         <div class="col-sm-3" style="height: 100vh; background-color: #F5F5F5; padding-right: 0;">
+        <h4 class="nav-link-text resources pt-5 pl-2 pb-3" style="color: #808080;" data-i18n="nav.theme_settings"><i class="fas fa-folder folder" style="color: #808080;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>x</span></h4>
+        <div class="panel-content">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-folder-open mr-1"></i> Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-align-right mr-1"></i> Activity</a>
+                </li>
+            </ul>
+            <div class="tab-content border border-top-0 p-3">
+                <div class="tab-pane fade active show" id="tab_borders_icons-1" role="tabpanel">
+                    No details to view.
+                </div>
+                <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
+                No details to view.
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </div>
   
-
-        
-      
-
- 
-
-
-
-<table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100 dataTable dtr-inline" role="grid" aria-describedby="dt-basic-example_info" style="width: 988px; position: relative;">
-    <thead class="bg-info-600">
-        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dt-basic-example" rowspan="1" colspan="1" style="width: 55px;" aria-label="Seq.: activate to sort column descending" aria-sort="ascending">Seq.</th><th class="sorting" tabindex="0" aria-controls="dt-basic-example" rowspan="1" colspan="1" style="width: 150px;" aria-label="Name: activate to sort column ascending">Name</th><th class="sorting" tabindex="0" aria-controls="dt-basic-example" rowspan="1" colspan="1" style="width: 230px;" aria-label="Position: activate to sort column ascending">Position</th><th class="sorting" tabindex="0" aria-controls="dt-basic-example" rowspan="1" colspan="1" style="width: 110px;" aria-label="Office: activate to sort column ascending">Office</th><th class="sorting" tabindex="0" aria-controls="dt-basic-example" rowspan="1" colspan="1" style="width: 101px;" aria-label="Start date: activate to sort column ascending">Start date</th><th class="sorting" tabindex="0" aria-controls="dt-basic-example" rowspan="1" colspan="1" style="width: 85px;" aria-label="Salary: activate to sort column ascending">Salary</th></tr>
-    </thead>
-    <tbody>
-    <tr role="row" class="odd">
-            <td class="sorting_1" tabindex="0">1</td>
-            <td class="">Shou Itou</td>
-            <td>Regional Marketing</td>
-            <td>Tokyo</td>
-            <td>2011/08/14</td>
-            <td>$163,000</td>
-        </tr><tr role="row" class="even">
-            <td tabindex="0" class="sorting_1">2</td>
-            <td class="">Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
-        </tr><tr role="row" class="odd">
-            <td class="sorting_1" tabindex="0">3</td>
-            <td class="">Bruno Nash</td>
-            <td>Software Engineer</td>
-            <td>London</td>
-            <td>2011/05/03</td>
-            <td>$163,500</td>
-        </tr><tr role="row" class="even">
-            <td class="sorting_1" tabindex="0">4</td>
-            <td class="">Olivia Liang</td>
-            <td>Support Engineer</td>
-            <td>Singapore</td>
-            <td>2011/02/03</td>
-            <td>$234,500</td>
-        </tr><tr role="row" class="odd">
-            <td class="sorting_1" tabindex="0">5</td>
-            <td class="">Gavin Joyce</td>
-            <td>Developer</td>
-            <td>Edinburgh</td>
-            <td>2010/12/22</td>
-            <td>$92,575</td>
-        </tr><tr role="row" class="even">
-            <td tabindex="0" class="sorting_1">6</td>
-            <td class="">Ashton Cox</td>
-            <td>Junior Technical Author</td>
-            <td>San Francisco</td>
-            <td>2009/01/12</td>
-            <td>$86,000</td>
-        </tr><tr role="row" class="odd">
-            <td class="sorting_1" tabindex="0">7</td>
-            <td class="">Fiona Green</td>
-            <td>Chief Operating Officer (COO)</td>
-            <td>San Francisco</td>
-            <td>2010/03/11</td>
-            <td>$850,000</td>
-        </tr><tr role="row" class="even">
-            <td class="sorting_1" tabindex="0">8</td>
-            <td class="">Martena Mccray</td>
-            <td>Post-Sales support</td>
-            <td>Edinburgh</td>
-            <td>2011/03/09</td>
-            <td>$324,050</td>
-        </tr><tr role="row" class="odd">
-            <td class="sorting_1" tabindex="0">9</td>
-            <td class="">Hermione Butler</td>
-            <td>Regional Director</td>
-            <td>London</td>
-            <td>2011/03/21</td>
-            <td>$356,250</td>
-        </tr><tr role="row" class="even">
-            <td class="sorting_1" tabindex="0">10</td>
-            <td class="">Finn Camacho</td>
-            <td>Support Engineer</td>
-            <td>San Francisco</td>
-            <td>2009/07/07</td>
-            <td>$87,500</td>
-        </tr></tbody>
-    <tfoot>
-        <tr><th rowspan="1" colspan="1">Seq.</th><th rowspan="1" colspan="1">Name</th><th rowspan="1" colspan="1">Position</th><th rowspan="1" colspan="1">Office</th><th rowspan="1" colspan="1">Start date</th><th rowspan="1" colspan="1">Salary</th></tr>
-    </tfoot>
-</table>
-
-<script>
-            var events = $('#app-eventlog');
-            var clearlogText = function()
-            {
-                events.empty();
-            }
-
-            $(document).ready(function()
-            {
-                var table = $('#dt-basic-example').DataTable(
-                {
-                    responsive: true,
-                    rowReorder:
-                    {
-                        selector: 'tr td:not(:first-child)'
-                    },
-                    filter: false, //for demo purpose only
-                    lengthChange: false //for demo purpose only
-                });
-
-                /* log events - demo purpose only */
-                table.on('row-reorder', function(e, diff, edit)
-                {
-                    var result = '<div class="mt-2 mb-1"><span class="badge badge-primary">Reorder</span> started for row <span class="text-info">' + edit.triggerRow.data()[1] + '</span></div>';
-                    for (var i = 0, ien = diff.length; i < ien; i++)
-                    {
-                        var rowData = table.row(diff[i].node).data();
-
-                        result += '<div class="my-1"><span class="text-info">' + rowData[1] + '</span> updated to be in position ' +
-                            diff[i].newData + ' ( <span class="font-italic">was ' + diff[i].oldData + '</span> )</div>';
-                    }
-                    events.prepend(result);
-                });
-
-            });
-
-        </script>

@@ -14,7 +14,7 @@ class SubjectModel extends CI_Model{
             $user_id = $this->session->user_id;
 
 
-            $query = $this->db->query("SELECT s.subject as subject, s.subject_id as subject_id FROM tbl_subject s
+            $query = $this->db->query("SELECT s.subject as subject, s.subject_id as subject_id, s.date_modified as last_update FROM tbl_subject s
             
         
             LEFT JOIN tbl_subscription ss ON (s.subject_id = ss.subject_id)
