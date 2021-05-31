@@ -24,7 +24,7 @@
                        Quick <span class="fw-300"><i>Filter</i></span>
                     </h2>
                     <div class="panel-toolbar">
-                        <button class="btn waves-effect waves-themed" style="color: #FF7800; " data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse">Hide</button>
+                        <button class="btn waves-effect waves-themed" style="color: #FF7800;" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse">Hide</button>
                     </div>
                 </div>
 
@@ -36,35 +36,42 @@
                         <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
                             <div class="card-body">
                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                <i class="fas fa-file-pdf fa-6x" style="color: red;"></i>
-                                <p class="card-text" style="margin-top: 15px;"><small class="font-weight-bold text-danger">PDF</small></p>
+                                <i class="fas fa-file-pdf fa-6x" id="pdf" style=""></i>
+                                <p class="card-text" id="pdf-text" style="margin-top: 15px;"><small class="font-weight-bold">PDF</small></p>
                             </div>
                         </div>
 
                         <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
                             <div class="card-body">
                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                <i class="fas fa-file-image fa-6x" style="color: #7FFF00;"></i>
-                                <p class="card-text" style="margin-top: 15px;"><small class="font-weight-bold" style="color:#7FFF00;">Image</small></p>
+                                <i class="fas fa-file-image fa-6x" id="image" style=""></i>
+                                <p class="card-text" id="image-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">Image</small></p>
                             </div>
                         </div>
 
                         <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
                             <div class="card-body">
                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                <i class="fas fa-file-video fa-6x" style="color: #4B0082;"></i>
-                                <p class="card-text" style="margin-top: 15px;"><small class="font-weight-bold" style="color:#4B0082;">Video</small></p>
+                                <i class="fas fa-file-video fa-6x" id="video" style=""></i>
+                                <p class="card-text" id="video-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">Video</small></p>
                             </div>
                         </div>
 
                         <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
                             <div class="card-body">
                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                <i class="fas fa-file-word fa-6x" style="color: #0000FF;"></i>
-                                <p class="card-text" style="margin-top: 15px;"><small class="font-weight-bold" style="color:#0000FF;">DOCS</small></p>
+                                <i class="fas fa-file-word fa-6x" id="docs" style=""></i>
+                                <p class="card-text" id="docs-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">DOCS</small></p>
                             </div>
                         </div>
 
+                        <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
+                            <div class="card-body">
+                                <h5 class="card-title" style="visibility: hidden;"></h5>
+                                <i class="fas fa-file-powerpoint fa-6x " id="ppt" style=""></i>
+                                <p class="card-text" id="ppt-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">PPT</small></p>
+                            </div>
+                        </div>
                                 
                         </div>
                     </div>
@@ -115,25 +122,35 @@
             </table>
 
         </div>
-        <div class="col-sm-" style="">
+        <div class="" style="">
         </div>
         <div class="col-sm-3" style="height: 100vh; background-color: #F5F5F5; padding-right: 0;">
-        <h4 class="nav-link-text resources pt-5 pl-2 pb-3" style="color: #808080;" data-i18n="nav.theme_settings"><i class="fas fa-folder folder" style="color: #808080;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>x</span></h4>
-        <div class="panel-content">
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-folder-open mr-1"></i> Details</a>
+        <h4 class="nav-link-text resources pt-5 pl-2 pb-3" style="color: #808080;" data-i18n="nav.theme_settings"><i class="fas fa-folder folder" style="color: #808080;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">x</a></h4>
+        <div class="panel-content"  style="width: 100% !important;">
+        
+            <ul class="nav nav-tabs" role="tablist" style="width: 100% !important;">
+        
+                <li class="nav-item text-center" style="width: 120px;">
+                    <a class="nav-link active" data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-info-circle mr-1"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-align-right mr-1"></i> Activity</a>
+        
+         
+                <li class="nav-item text-center" style="width: 120px;">
+                    <a class="nav-link" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-clock"></i></a>
+                </li>
+       
+                <li class="nav-item text-center" style="width: 120px;">
+                    <a class="nav-link" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false">
+                <i class="fal fa-comments"></i></a>
                 </li>
             </ul>
+      
             <div class="tab-content border border-top-0 p-3">
                 <div class="tab-pane fade active show" id="tab_borders_icons-1" role="tabpanel">
                     No details to view.
                 </div>
                 <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
-                No details to view.
+                    No details to view.
                 </div>
             </div>
         </div>

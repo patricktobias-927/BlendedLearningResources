@@ -261,9 +261,14 @@ aside.page-sidebar ($nav-width, $nav-background)
 /* ACCESSIBILITIES */
 /* SHORTCUT BUTTON (appears on bottom right of the page) */
 /* GULP WARNINGS */
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap'); */
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+  /* font-family: "Roboto", "Helvetica Neue", Helvetica, Arial; */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Poppins', sans-serif !important;
   font-size: 0.8125rem;
   letter-spacing: 0.1px; }
 
@@ -7933,5 +7938,44 @@ body:not(.mobile-detected).modal-open .modal::-webkit-scrollbar-thumb:vertical:h
 
 /* #OVERRIDE - You can override any of the variables through this file
 ========================================================================== */
+#pdf {
+  color:  #C42D28;
+}
+#pdf-text {
+  color:  #C42D28;
+}
+
+#image {
+  color:  #7AA600;
+}
+#image-text {
+  color:  #7AA600;
+}
+
+#video {
+  color:  #5C0696;
+}
+#video-text {
+  color:  #5C0696;
+}
+
+#docs {
+  color:  #0063AE;
+}
+#docs-text {
+  color:  #0063AE;
+}
+
+#ppt {
+  color:  #AA3C00;
+}
+#ppt-text {
+  color:  #AA3C00;
+}
+
+a.active { background-color:#FF7800 !important; }
+
+
+
 
 /*# sourceMappingURL=app.bundle.css.map */
