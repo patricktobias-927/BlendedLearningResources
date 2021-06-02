@@ -5,9 +5,19 @@
                 <div class="panel-tag">
                    <i>Subject Items</i>
                 </div>
+                <?php   $x = 0; ?>
 
+                  <?php while($x != count($file_path)) {
 
-                        <iframe class="tabContent" name="myIframe" src="<?= base_url();?><?= $path;?>" marginheight="8" marginwidth="8" style="margin:0; padding:0; width:100%; height:600px; border:none; overflow:hidden;' scrolling='no';"></iframe>  
+                        echo $file_path[$x];
+                        $x++;
+                        echo "<br>";
+                        } ?>
+
+       
+          
+      
+                        <!-- <iframe class="tabContent" name="myIframe" src="<?= base_url();?><?= $path;?>" marginheight="8" marginwidth="8" style="margin:0; padding:0; width:100%; height:600px; border:none; overflow:hidden;' scrolling='no';"></iframe>   -->
                
     
                 <!-- datatable end -->

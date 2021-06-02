@@ -13,13 +13,13 @@ class ProfileController extends CI_Controller{
     }
     else
     {
-     
+        $this->load->model('SubjectModel');
         $page = "ChangeProfile";
 
         if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
             show_404();
         }   
-
+        $data['subjects'] = $this->SubjectModel->fetchSubject();
         $data['title'] = "Change Password";
 
         $this->load->view('templates/header', $data);
@@ -34,7 +34,7 @@ class ProfileController extends CI_Controller{
 
             $this->load->model('ProfileModel');
             $this->load->library('encryption');
-
+            $this->load->model('SubjectModel');
             //ENCRYPT
             // $key = bin2hex($this->encryption->create_key(16));
         
@@ -57,7 +57,7 @@ class ProfileController extends CI_Controller{
             if($this->form_validation->run() == FALSE){
 
                 $page = "ChangeProfile";
-    
+              
                 $data['title'] = "BLR Login";
                
                 if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
@@ -69,11 +69,12 @@ class ProfileController extends CI_Controller{
                 redirect('changePassword');
         
             }else{
-
+                $this->load->model('SubjectModel');
                 $page = "ChangeProfile";
     
                 $data['title'] = "BLR Login";
-               
+                $data['subjects'] = $this->SubjectModel->fetchSubject();
+
                 $this->ProfileModel->changePassword($user_id,$password);
 
                 $this->session->set_flashdata('changed_password', 'Password changed!');
@@ -84,19 +85,19 @@ class ProfileController extends CI_Controller{
 
             }
               
-            // $this->session->unset_userdata('firstname');
-            // $this->session->unset_userdata('lastname');
-            // $this->session->unset_userdata('fullname');
-            // $this->session->unset_userdata('user_name');
-            // $this->session->unset_userdata('password');
-            // $this->session->unset_userdata('school_code');
-            // $this->session->unset_userdata('logged_in');
+            $this->session->unset_userdata('firstname');
+            $this->session->unset_userdata('lastname');
+            $this->session->unset_userdata('fullname');
+            $this->session->unset_userdata('user_name');
+            $this->session->unset_userdata('password');
+            $this->session->unset_userdata('school_code');
+            $this->session->unset_userdata('logged_in');
             
-            // $this->load->driver('cache');
-            // // $this->session->sess_destroy();
-            // $this->cache->clean();
-            // ob_clean();
-    
+            $this->load->driver('cache');
+            $this->session->sess_destroy();
+            $this->cache->clean();
+            ob_clean();
+            header( "refresh:2;url=login" );
             // redirect('login');
             }
         public function check_equal_less($new_password,$password)

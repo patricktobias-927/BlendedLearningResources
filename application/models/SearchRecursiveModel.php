@@ -1,6 +1,6 @@
 <?php
 
-class RecursiveModel extends CI_Model{
+class SearchRecursiveModel extends CI_Model{
 
     public function __construct(){
 
@@ -9,10 +9,10 @@ class RecursiveModel extends CI_Model{
         
     }
     
-    public function transferPath($rootDir){
-            function getFilePath($rootDir){
+    public function transferPath($rootDir,$filename){
+            function getFilePath($rootDir,$filename){
  
-            $dirF = $rootDir;
+            $dirF = $rootDir.'/'.$filename;
             if (file_exists($dirF)) {
              return $dirF;
         
@@ -24,10 +24,10 @@ class RecursiveModel extends CI_Model{
         
             foreach ($dirs as $key => $value) {
         
-                $searchKey = $value;
+                $searchKey = $value.'/'.$filename;
         
                 $nextPath = $value;
-                if (file_exists($ffile = getFilePath($nextPath))) {
+                if (file_exists($ffile = getFilePath($nextPath,$filename))) {
                     return $ffile;
                 }
         
@@ -37,9 +37,8 @@ class RecursiveModel extends CI_Model{
             
         }
         
-        $finalFilePath = getFilePath($rootDir);
+        $finalFilePath = getFilePath($rootDir,$filename);
         return   $finalFilePath;
-        
         // if (trim($finalFilePath)!='notfound') {
         //     print_r($finalFilePath);
         // }
@@ -47,6 +46,4 @@ class RecursiveModel extends CI_Model{
         //     echo "file not found";
         // }
     }   
-
-    
 }

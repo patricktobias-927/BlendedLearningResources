@@ -91,16 +91,25 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 <span class="nav-link-text resources" style="color: #808080;" data-i18n="nav.theme_settings">Resources</span>
                           </a>
                             <ul style="background-color: rgb(245, 245, 245); display: block;">
+
+                            <?php foreach($subjects as $row){?>
                                 <li>
-                                    <a class="subject-link waves-effect waves-themed" href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
+                                    <form id="title_id" name="title_id" action="<?= base_url();?>title" method="post">
                                     
-                                        <span class="nav-link-text subject" style="color: #808080;" data-i18n="nav.theme_settings_how_it_works"><i class="fas fa-folder folder"></i> &nbsp;FILIPINO</span>
-                                    </a>
+                                        <button id="" type="submit" style="border: none; width: 100%; padding: 0; background-color: rgb(245, 245, 245);" >
+                                            <a type="submit" style="width: 100%; height: auto; font-size: 15px !important;" class="btn subject-link waves-effect waves-themed" href="" title="How it works" data-filter-tags="theme settings how it works">    
+                                                <span class="nav-link-text subject" style="color: #808080;" data-i18n="nav.theme_settings_how_it_works"><i class="fas fa-folder folder"></i> &nbsp;<?= $row['subject'];?></span>
+                                                <input style="display:none;" id="subject_id" name="subject_id" type="text" value="<?= $row['subject_id'];?>">
+                                            </a>
+                                        </button>
+                                 
+                                    </form>
                                 </li>
+                                <?php } ?>  
 
                             </ul>
                         </li>
-
+                 
 
                         
                         <li>
@@ -163,11 +172,13 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         </a>
                     </div>
                     <div class="search">
-                        <form class="app-forms hidden-xs-down" role="search" action="page_search.html" autocomplete="off">
-                            <input type="text" id="search-field" placeholder="Search for anything" class="form-control" tabindex="1">
+                        <form class="app-forms hidden-xs-down" role="search" action="<?= base_url();?>search" autocomplete="off" method="post">
+                            <input style="background-color: rgb(245, 245, 245); display: inline;" type="text" id="search-field" name="search-field" placeholder="Search" class="form-control" tabindex="1">
+                            <button type="submit" style="margin-left: 5px; margin-bottom: 5px; background-color: #FF7800;" class="btn"><i class="fal fa-search" style="color: white !important;"></i></button>
                             <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
-                                <i class="fal fa-times"></i>
+                                <i class="fal fa-times" ></i>
                             </a>
+                                
                         </form>
                     </div>
                     <div class="ml-auto d-flex">
@@ -177,11 +188,42 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 <i class="fal fa-search"></i>
                             </a>
                         </div>
+                          <!-- info -->
+                          <div class="hidden-md-down">
+                            <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-settings">
+                            <i style="color: #808080;" class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    
+                         <!-- info -->
+                         <div class="hidden-md-down">
+                            <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-settings">
+                            <i style="
+                            border-radius: 50%; color: #FF7800;" class="fal fa-info-circle"></i>
+                            </a>
+                        </div>
+
+                        <!-- ellipsis -->
+                        <div class="hidden-md-down">
+                            <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-settings">
+                            <i class="fal fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+
+                        <style>
+                            .vl {
+                            margin-top: 2px;
+                            border-left: 2px solid rgb(245, 245, 245);
+                            height: 60px;
+                            }
+                            </style>
+                        <div class="vl"></div>
                         <!-- app settings -->
                         <div class="hidden-md-down">
                             <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-settings">
-                                <i class="fal fa-cog"></i>
+                            <i style="color: #808080;" class="fal fa-question-circle fa-3x"></i>
                             </a>
+                            
                         </div>
                         <!-- app shortcuts -->
                     
@@ -191,11 +233,10 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         <!-- app notification -->
                         <div>
                             <a href="#" class="header-icon" data-toggle="dropdown" title="You got 11 notifications">
-                                <i class="fal fa-bell"></i>
-                                <span class="badge badge-icon">11</span>
+                                <i style="color: #808080;" class="fal fa-bell"></i>
+                                <span class="badge badge-icon">0</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-xl">
-                                
                                 <div class="py-2 px-3 bg-faded d-block rounded-bottom text-right border-faded border-bottom-0 border-right-0 border-left-0">
                                     <a href="#" class="fs-xs fw-500 ml-auto">view all notifications</a>
                                 </div>
@@ -205,7 +246,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <div>
             <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2" aria-expanded="true">
             
-                <i class="fas fa-user-circle fa-3x" style=""></i>
+                <i class="fas fa-user-circle fa-3x" style="color: #808080;"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-animated dropdown-lg" x-placement="top-start" style="position: absolute; will-change: top, left; top: 5px; left: 803px;">
                 <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
@@ -264,3 +305,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                 </ol> -->
 
     <?php } ?>
+
+    
+
+
+    

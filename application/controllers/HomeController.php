@@ -25,14 +25,15 @@ class HomeController extends CI_Controller{
         
 
         $data['subjects'] = $this->SubjectModel->fetchSubject();
-        $title['title'] = "Blended Learning Resources";
+        $data['title'] = "Blended Learning Resources";
 
-        $this->load->view('templates/header', $title);
+        $this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
 
      
         }   
     }
+
     
 }

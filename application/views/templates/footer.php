@@ -14,20 +14,55 @@
             <a href="#" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Scroll Top">
                 <i class="fal fa-arrow-up"></i>
             </a>
-            <a href="page_login-alt.html" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
+            <a href="<?= base_url();?>logout" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
                 <i class="fal fa-sign-out"></i>
             </a>
             <a href="#" class="menu-item btn" data-action="app-fullscreen" data-toggle="tooltip" data-placement="left" title="Full Screen">
                 <i class="fal fa-expand"></i>
             </a>
-            <a href="#" class="menu-item btn" data-action="app-print" data-toggle="tooltip" data-placement="left" title="Print page">
+            <!-- <a href="#" class="menu-item btn" data-action="app-print" data-toggle="tooltip" data-placement="left" title="Print page">
                 <i class="fal fa-print"></i>
             </a>
             <a href="#" class="menu-item btn" data-action="app-voice" data-toggle="tooltip" data-placement="left" title="Voice command">
                 <i class="fal fa-microphone"></i>
-            </a>
+            </a> -->
         </nav>
-        
+
+        <style>
+        .custom-menu {
+            display: none;
+            z-index: 1000;
+            position: absolute;
+            overflow: hidden;
+            border: 1px solid #CCC;
+            white-space: nowrap;
+            font-family: sans-serif;
+            background: #FFF;
+            color: #333;
+            border-radius: 5px;
+            padding: 0;
+        }
+
+        /* Each of the items in the list */
+        .custom-menu li {
+            padding: 8px 12px;
+            cursor: pointer;
+            list-style-type: none;
+            transition: all .3s ease;
+            user-select: none;
+        }
+
+        .custom-menu li:hover {
+            background-color: #DEF;
+        }
+        </style>
+
+        <ul class='custom-menu'>
+            <li data-action="first">First thing</li>
+            <li data-action="second">Second thing</li>
+            <li data-action="third">Third thing</li>
+        </ul>
+     
     <?php } ?>
 <!-- END OF PAGE -->
 
@@ -125,6 +160,54 @@ $("#js-sweetalert2-example-6").on("click", function(e)
 
         //DATATABLES
     
+
+
+// // JAVASCRIPT (jQuery)
+
+// // Trigger action when the contexmenu is about to be shown
+// $(document).bind("contextmenu", function (event) {
+    
+//     // Avoid the real one
+//     event.preventDefault();
+    
+//     // Show contextmenu
+//     $(".custom-menu").finish().toggle(100).
+    
+//     // In the right position (the mouse)
+//     css({
+//         top: event.pageY + "px",
+//         left: event.pageX + "px"
+//     });
+// });
+
+
+// // If the document is clicked somewhere
+// $(document).bind("mousedown", function (e) {
+    
+//     // If the clicked element is not the menu
+//     if (!$(e.target).parents(".custom-menu").length > 0) {
+        
+//         // Hide it
+//         $(".custom-menu").hide(100);
+//     }
+// });
+
+
+// // If the menu element is clicked
+// $(".custom-menu li").click(function(){
+    
+//     // This is the triggered action name
+//     switch($(this).attr("data-action")) {
+        
+//         // A case for each action. Your actions here
+//         case "first": alert("first"); break;
+//         case "second": alert("second"); break;
+//         case "third": alert("third"); break;
+//     }
+  
+//     // Hide it AFTER the action was triggered
+//     $(".custom-menu").hide(100);
+//   });
             
         </script>
  

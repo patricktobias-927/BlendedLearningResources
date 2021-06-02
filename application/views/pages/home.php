@@ -1,6 +1,6 @@
     <?= validation_errors();?> 
 
-        <?php if($this->session->password === "phoenix927"){?>
+        <?php if($this->session->password === md5('phoenix927')){?>
         <?= '<script aria-hidden="true">' ?>   
                 //    const show = () =>  $("document").ready(function() {
                 //                 $("#js-sweetalert2-example-1").trigger('click');
@@ -14,7 +14,7 @@
             <?=  ' modal();' ?>
             <?=  ' </script>' ?>
         <?php } ?>
-
+     
 <div class="containter">
     <div class="row">
     <div class="col-sm-9 col-md-9 col-lg-9">
@@ -80,37 +80,43 @@
             
             <br>
 
+     
             <table id="dt-basic-example" class="table table-bordered table-hover w-100" style="width: 100%;height: auto; ">
-                <thead class="bg-warning-500">
+                <thead class="">
                     <tr>
                         <th style="display:none;"></th>
                         <th>Name</th>
                         <th>Last Update</th>
-                        <th>File size</th>
-                        <th >Action</th>
+                        <th col-spa>File size</th>
+                        <th style="display:none;" >Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
+                    <style>
+                    #title_view:hover 
+                    {
+                    cursor: pointer;
+                    }
+                 </style>
+        
                 <?php foreach($subjects as $row){?>
-                
-                    <tr>
-                         
-                        <td><i class="fa fa-folder fa-1x" style="color: #808080;">&nbsp;</i> <?= $row['subject'];?></td>
-                        <td> <?= $row['last_update'];?></td>
-                        <td>--</td>
-                        <td style=""> 
-                            <form id="title_id" name="title_id" action="<?= base_url();?>title" method="post">
-                                <input style="display:none;" id="subject_id" name="subject_id" type="text" value="<?= $row['subject_id'];?>">
-                                <!-- <input style="display:none;" id="title" name="title" type="text" value="<?= $row['subject'];?>"> -->
-                                <button type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
-                            </form>
 
-                        </td>
-                    </tr>
+                    <form id="title_id" name="title_id" action="<?= base_url();?>title" method="post">
+                        <tr id="title_view" ondblclick="myFunction()" value="<?= $row['subject_id'];?>">     
+                            <td id="td_value" name="td_value" value="<?= $row['subject_id'];?>"><i class="fa fa-folder fa-1x" style="color: #808080;">&nbsp;</i> <?= $row['subject'];?></td>
+                            <td > <?= $row['last_update'];?></td>
+                            <td >--</td>
+              
+                            <td style="display:none;"> 
+                                <input style="display:none;" id="subject_id" name="subject_id" type="text" value="<?= $row['subject_id'];?>">
+                                    <!-- <input style="display:none;" id="title" name="title" type="text" value="<?= $row['subject'];?>"> -->
+                                <button style="display:none;" type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
+                            </td >
+                    </form> 
 
                 <?php } ?>  
-
+            
                 </tbody>
                 <tfoot class="thead-themed">
                     <!-- <tr>
@@ -120,8 +126,9 @@
                     </tr> -->
                 </tfoot>
             </table>
-
+     
         </div>
+ 
         <div class="" style="">
         </div>
         <div class="col-sm-3" style="height: 100vh; background-color: #F5F5F5; padding-right: 0;">
@@ -157,4 +164,13 @@
         </div>
     </div>
 </div>
-  
+
+
+<!--DOUBLE CLICK FUNCTION-->
+<script>
+$("td").dblclick(function() {
+  var set_subject = $(this).parent().find("input").val();
+  $("input:text").val(set_subject);
+  $("#title_id").submit();
+});
+</script>

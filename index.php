@@ -305,6 +305,12 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
 
+	#CUSTOM VARIABLES
+
+	define('RESOURCES_PATH', str_replace('\\', '/', FCPATH . 'assets/FILES/'));
+
+	#END CUSTOM
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

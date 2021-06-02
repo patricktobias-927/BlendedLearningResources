@@ -3,10 +3,8 @@
         <div class="panel-container show"  style="width: 100%;height: auto;">
             <div class="panel-content">
                 <div class="panel-tag">
-               <a href="<?= base_url();?>home" class="btn btn-primary waves-effect waves-themed"> <i class="fal fa-arrow-circle-left"> Back</i> </a>
-                
+               <a href="<?= base_url();?>home" class="btn btn-primary waves-effect waves-themed"> <i class="fal fa-arrow-circle-left"></i> </a>
                    <i style="float: right;">
-                   
                     Subject Items
                    </i>
                 </div>
@@ -16,21 +14,21 @@
                         <tr>
                             <th style="display:none;"></th>
                             <th>Title</th>
-                            <th >Action</th>
+                            <th style="">Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                    <?php foreach($title as $row){?>
+                    <?php foreach($titles as $row){?>
                     
                         <tr>
                             <td><?= $row['title'];?></td>
-                            <td style="max-width: 20px;"> 
+                            <td style="max-width: 20px; "> 
                                 <form id="title_id" name="title_id" action="<?= base_url();?>viewTitle" method="post">
                                     <input style="display:none;" id="title_id" name="title_id" type="text" value="<?= $row['title_id'];?>">
                                     <input style="display:none;" id="title" name="title" type="text" value="<?= $row['title'];?>">
-                                    <button type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
-                                    <a href="<?= base_url();?>files/<?= $row['title'];?>" id="view" type="submit" class="btn btn-primary waves-effect waves-themed" download>Download</a>
+                                    <button style="" type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
+                                    <a style="" href="<?= base_url();?>files/<?= $row['title'];?>" id="view" type="submit" class="btn btn-primary waves-effect waves-themed" download>Download</a>
                                 </form>
 
                             </td>
@@ -48,8 +46,6 @@
                     </tfoot>
                 </table>
 
-             
-                
                 <!-- datatable end -->
             </div>
         </div>
