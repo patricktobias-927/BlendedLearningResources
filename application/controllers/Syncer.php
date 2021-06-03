@@ -70,6 +70,7 @@ class Syncer extends CI_Controller {
     #PUBLIC FILTER Patrick
     public function filter()
     {
+        $this->load->helper('directory');
         $type = $this->input->post('type');
             #LOOP THROUGH TAGGED TITLES
             $this->load->model('SubjectModel');

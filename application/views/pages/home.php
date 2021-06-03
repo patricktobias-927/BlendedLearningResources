@@ -140,7 +140,7 @@
                     
                                     <td style="display:none;"> 
                                         <input style="display:none;" id="subject_id" name="subject_id" type="text" value="<?= $row['subject_id'];?>">
-                                            <!-- <input style="display:none;" id="title" name="title" type="text" value="<?= $row['subject'];?>"> -->
+                                        <!-- <input style="display:none;" id="title" name="title" type="text" value="<?= $row['subject'];?>"> -->
                                         <button style="display:none;" type="submit" id="view" class="btn btn-primary waves-effect waves-themed">View</button>
                                     </td >
                             </form> 
