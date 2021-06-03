@@ -49,6 +49,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+//SYNCER CONTROLLER
+$route['index'] = 'Syncer/index';
+//filter
+$route['filter'] = 'Syncer/filter';
+
 //HOME
 // $route['home'] = 'HomeController/index';
 $route['home'] = 'HomeController/index';

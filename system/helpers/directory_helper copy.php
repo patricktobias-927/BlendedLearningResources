@@ -71,9 +71,9 @@ if ( ! function_exists('directory_map'))
 			$filedata	= array();
 			$new_depth	= $directory_depth - 1;
 			$source_dir	= rtrim($source_dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
-			#$x = '';
+
 			while (FALSE !== ($file = readdir($fp)))
-			{	
+			{
 				// Remove '.', '..', and hidden files [optional]
 				if ($file === '.' OR $file === '..' OR ($hidden === FALSE && $file[0] === '.'))
 				{
@@ -88,94 +88,12 @@ if ( ! function_exists('directory_map'))
 				}
 				else
 				{
-					#$filedata[] = $x . '\\' . $file;
-					#$x = '';
 					$filedata[] = $file;
 				}
-				
-				#$x .= $source_dir.$file; #CUSTOM
 			}
 
 			closedir($fp);
 			return $filedata;
-		}
-
-		return FALSE;
-	}
-
-	#CUSTOM
-	function custom_directory_map($source_dir, $directory_depth = 0, $hidden = FALSE, $isGrouped = FALSE)
-	{
-		$r = array(
-			'fileLists' => array(),
-			'fileTypes' => array()
-		);
-		$rDirs = array();
-
-		if ($fp = @opendir($source_dir))
-		{
-			$filedata	= array();
-			$new_depth	= $directory_depth - 1;
-			$source_dir	= rtrim($source_dir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
-			#$x = '';
-			while (FALSE !== ($file = readdir($fp)))
-			{	
-				// Remove '.', '..', and hidden files [optional]
-				if ($file === '.' OR $file === '..' OR ($hidden === FALSE && $file[0] === '.'))
-				{
-					continue;
-				}
-
-				is_dir($source_dir.$file) && $file .= DIRECTORY_SEPARATOR;
-
-				if (($directory_depth < 1 OR $new_depth > 0) && is_dir($source_dir.$file))
-				{
-					$filedata[$file] = directory_map($source_dir.$file, $new_depth, $hidden);
-				}
-				else
-				{
-					if( $isGrouped == TRUE )
-					{
-						if( is_dir($source_dir.$file ))
-						{
-							$filedata['directory'][] = $file;
-						}
-					}
-					else
-					{
-						if( is_dir( $source_dir.$file ))
-						{
-							$rDirs[] = $file;
-						}
-						else
-						{
-							$filedata[] = $file;
-						}
-					}
-					
-				}
-				
-				#GET FILETYPES
-				if( is_dir($source_dir.$file ))
-				{
-					$r['fileTypes']['directory'] = !array_key_exists( 'directory', $r['fileTypes'] ) ? 1: $r['fileTypes']['directory'] + 1;
-				}
-				
-				if( !is_dir($source_dir.$file ))
-				{
-					$rExt = explode( '.', $file );
-					$finalExt = end($rExt);
-					$r['fileTypes'][$finalExt] = !array_key_exists( $finalExt, $r['fileTypes'] ) ? 1 : $r['fileTypes'][$finalExt] + 1;
-				}
-				#END CUSTOM	
-			}
-
-			closedir($fp);
-			
-			$r['fileLists'] = array_merge($rDirs, $filedata);
-			
-			return $r;
-			#return $filedata;
 		}
 
 		return FALSE;
