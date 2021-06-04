@@ -293,6 +293,8 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
             </div>
         </div>
     </div>
+
+    
 </header>
             <!-- END Page Header -->
             <!-- BEGIN Page Content -->

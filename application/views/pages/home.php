@@ -158,28 +158,38 @@
                     </table>
             
                 </div>
+
+                <style>
+                @media (max-width: 480px) {
+                    .side-icon {
+                        width: 120px !important;
+                    }
+                }
+                </style>
         
                 <div class="" style="">
                 </div>
                 <div class="col-sm-3" style="height: 100vh; background-color: #F5F5F5; padding-right: 0;">
-                <h4 class="nav-link-text resources pt-5 pl-2 pb-3" style="color: #808080;" data-i18n="nav.theme_settings"><i class="fas fa-folder folder" style="color: #808080;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">x</a></h4>
+                <h4 class="nav-link-text resources pt-5 pl-2 pb-3" style="color: #808080;" data-i18n="nav.theme_settings"><i class="fas fa-folder folder" style="color: #808080;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resources</h4>
                 <div class="panel-content"  style="width: 100% !important;">
                 
                     <ul class="nav nav-tabs" role="tablist" style="width: 100% !important;">
-                
-                        <li class="nav-item text-center" style="width: 120px;">
+  
+                        <li class="nav-item text-center side-icon" style="width: 80px;">
                             <a class="nav-link active" data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-info-circle mr-1"></i></a>
                         </li>
-                
-                
-                        <li class="nav-item text-center" style="width: 120px;">
+     
+   
+                        <li class="nav-item text-center side-icon" style="width: 80px;">
                             <a class="nav-link" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-clock"></i></a>
                         </li>
-            
-                        <li class="nav-item text-center" style="width: 120px;">
+     
+           
+                        <li class="nav-item text-center side-icon" style="width: 80px;">
                             <a class="nav-link" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false">
                         <i class="fal fa-comments"></i></a>
                         </li>
+           
                     </ul>
             
                     <div class="tab-content border border-top-0 p-3">

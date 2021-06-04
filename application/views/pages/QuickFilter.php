@@ -1,4 +1,4 @@
-<div id="panel-11" class="panel d-flex justify-content-center" style="width: 80%; heigth: auto; margin: auto; margin-top: 50px;">
+<div id="panel-11" class="panel d-flex justify-content-center">
     <div class="panel-hdr">
         <div class="panel-container show"  style="width: 100%;height: auto;">
             <div class="panel-content">
@@ -9,7 +9,8 @@
                    </i>
                 </div> -->
                 <!-- datatable start -->
-                <table id="dt-basic-example" class="table table-bordered table-hover w-100" style="width: 100%;height: 100%; ">
+            <div class="row col-lg-12 table-responsive-lg">
+                <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100 table-sortable" >
                     <thead class="">
                         <tr>
                             <th style="display:none;"></th>
@@ -68,7 +69,8 @@
                         </tr> -->
                     </tfoot>
                 </table>
-
+       <!-- datatable end -->
+       </div>
                 <!-- datatable end -->
             </div>
         </div>
