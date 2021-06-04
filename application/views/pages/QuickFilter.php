@@ -48,19 +48,17 @@
                     <i class="fas fa-file-image fa-2x"  id="powerpoint"></i> <?php } elseif($filePath = key($arrayFiles['fileTypes']) == 'video') { ?>
                     <i class="fas fa-file-imavideoge fa-2x"  id="video"></i> <?php } ?>
                     &nbsp;&nbsp;&nbsp;<?= end($explodeFile);?>
-            
                     </td>
                     <td> <?=date( "Y/m/d H:i:s", filemtime( $arrayFiles['filesList'][$i] ));?> </td>
                     <td> <?= round((filesize( $arrayFiles['filesList'][$i] )) / 1024, 2);?>.kb </td>
-                    <td><?= md5($filePath);?> </td>
-
+                    <td><?= $explodeFile[6].'/'. $explodeFile[7];?> </td>
+                    <!-- <td> <?= $arrayFiles['filesList'][$i]; ?> </td> -->
                 </tr>
             <?php $i++ ?>
             <?php } ?>
 
         <?php } ?>  
             
-
                     </tbody>
                     <tfoot class="thead-themed">
                         <!-- <tr>

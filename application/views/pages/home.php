@@ -31,72 +31,72 @@
                         <div class="panel-container show">
                             <div class="panel-content">
                         
-                                <div class="card-deck">
+                                <div class="card-deck ">
                             
-                                <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
+                                <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
-                                        <button type="submit" class="btn">
+                                        <button type="submit" class="btn" style="width: auto; margin: auto; ">
                                             <!--TYPE OF FILE-->
                                             <input style="display: none;" type="text" value="pdfs" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                                <i class="fas fa-file-pdf fa-6x" id="pdf" style=""></i>
+                                                <i class="fas fa-file-pdf fa-4x" id="pdf" style=""></i>
                                                 <p class="card-text" id="pdf-text" style="margin-top: 15px;"><small class="font-weight-bold">PDF</small></p>
                                             </div>
                                         </button>
                                     </form>
                                 </div>
                             
-                                <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
+                                <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
                                         <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
                                             <input style="display: none;" type="text" value="images" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                                <i class="fas fa-file-image fa-6x" id="image" style=""></i>
+                                                <i class="fas fa-file-image fa-4x" id="image" style=""></i>
                                                 <p class="card-text" id="image-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">Image</small></p>
                                             </div>
                                         </button>
                                     </form>
                                 </div>
 
-                                <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
+                                <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
                                         <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
                                             <input style="display: none;" type="text" value="videos" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                                <i class="fas fa-file-video fa-6x" id="video" style=""></i>
+                                                <i class="fas fa-file-video fa-4x" id="video" style=""></i>
                                                 <p class="card-text" id="video-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">Video</small></p>
                                             </div>
                                         </button>
                                     </form>
                                 </div>
 
-                                <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
+                                <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
                                         <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
                                             <input style="display: none;" type="text" value="documents" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                                <i class="fas fa-file-word fa-6x" id="docs" style=""></i>
+                                                <i class="fas fa-file-word fa-4x" id="docs" style=""></i>
                                                 <p class="card-text" id="docs-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">DOCS</small></p>
                                             </div>
                                         </button>
                                     </form>
                                 </div>
 
-                                <div class="card text-center" style="width: 50%; background-color: #F5F5F5;">
+                                <div class="card text-center" style="background-color: #F5F5F5;">
                                     <form action="<?= base_url();?>filter" method="post">
                                             <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
                                             <input style="display: none;" type="text" value="presentations" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
-                                                <i class="fas fa-file-powerpoint fa-6x " id="ppt" style=""></i>
+                                                <i class="fas fa-file-powerpoint fa-4x " id="ppt" style=""></i>
                                                 <p class="card-text" id="ppt-text" style="margin-top: 15px;"><small class="font-weight-bold" style="">PPT</small></p>
                                             </div>
                                         </button>
