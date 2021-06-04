@@ -76,7 +76,7 @@ class Syncer extends CI_Controller {
             $this->load->model('SubjectModel');
             $data['subjects'] = $this->SubjectModel->fetchSubject();
             // $this->_quick_filter( $this->rootDir, 'pdfs' );
-
+            print_r( $this->_quick_filter( $this->rootDir, $type ));
             #PATRICK
             $data['arrayFiles'] = $this->_quick_filter($this->rootDir, $type);
 

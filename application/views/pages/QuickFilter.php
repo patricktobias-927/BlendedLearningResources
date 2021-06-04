@@ -40,14 +40,23 @@
        
           
                     <td> 
-                   
-                    <?php if($filePath = key($arrayFiles['fileTypes']) == 'pdf') { ?>
+                
+                    <?php 
 
-                    <i class="fas fa-file-pdf fa-2x"  id="pdf"></i> <?php } elseif($filePath = key($arrayFiles['fileTypes']) == 'txt') {?> 
-                    <i class="fas fa-file-word fa-2x"  id="docs"></i> <?php } elseif($filePath = key($arrayFiles['fileTypes']) == 'image') { ?>
-                    <i class="fas fa-file-image fa-2x"  id="image"></i> <?php } elseif($filePath = key($arrayFiles['fileTypes']) == 'powerpoint') { ?>
-                    <i class="fas fa-file-image fa-2x"  id="powerpoint"></i> <?php } elseif($filePath = key($arrayFiles['fileTypes']) == 'video') { ?>
-                    <i class="fas fa-file-imavideoge fa-2x"  id="video"></i> <?php } ?>
+                        $filePath = key($arrayFiles['fileTypes']);
+                            if($filePath == 'pdf') { 
+                                echo'<i class="fas fa-file-pdf fa-2x"  id="pdf"></i>';  
+                            } elseif(($filePath == 'txt' || ($filePath == 'doc') || ($filePath == 'docs')) ) { 
+                                echo'<i class="fas fa-file-word fa-2x"  id="docs"></i>';
+                            } elseif(($filePath  == 'png') || ($filePath == 'jpg') || ($filePath == 'jpeg')) { 
+                                echo'<i class="fas fa-file-image fa-2x"  id="image"></i>';
+                            } elseif(($filePath == 'ppt') || ($filePath == 'pptx')) {
+                                echo'<i class="fas fa-file-powerpoint fa-2x" style="color:  #AA3C00;" id="powerpoint"></i>';
+                            } elseif(($filePath  == 'mp4') ||( $filePath == 'mov') || ($filePath == 'wmv') || ($filePath == 'avi')) {
+                                echo'<i class="fas fa-file-video fa-2x"  id="video"></i>';
+                            } 
+                        ?>
+                        
                     &nbsp;&nbsp;&nbsp;<?= end($explodeFile);?>
                     </td>
                     <td> <?=date( "Y/m/d H:i:s", filemtime( $arrayFiles['filesList'][$i] ));?> </td>
