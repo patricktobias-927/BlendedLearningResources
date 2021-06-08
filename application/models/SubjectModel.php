@@ -25,4 +25,17 @@ class SubjectModel extends CI_Model{
             return $query->result_array();
           
     }
+
+    public function fetchSubjectName($subject_id){
+         
+
+
+        $query = $this->db->query("SELECT s.subject as subject FROM tbl_subject s
+       
+
+        WHERE subject_id = $subject_id");
+
+        return $query->result_array();
+      
+}
 }

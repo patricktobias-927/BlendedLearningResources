@@ -128,48 +128,28 @@ class Syncer extends CI_Controller {
     public function filter()
     {
         $this->load->helper('directory');
-        $type = $_GET['type'];
-        // $type = $this->input->post('type');
+        $type = $this->input->post('type');
             #LOOP THROUGH TAGGED TITLES
             $this->load->model('SubjectModel');
-            $subjects = $this->SubjectModel->fetchSubject();
+            $data['subjects'] = $this->SubjectModel->fetchSubject();
             // $this->_quick_filter( $this->rootDir, 'pdfs' );
             // print_r( $this->_quick_filter( $this->rootDir, $type ));
             #PATRICK
-            $arrayFiles = $this->_quick_filter($this->rootDir, $type);
+            $data['arrayFiles'] = $this->_quick_filter($this->rootDir, $type);
 
             //FILTER FILE PATH
-            $filteredFiles = $this->_quick_filter( $this->rootDir, $type );
+            $data['filteredFiles'] = $this->_quick_filter( $this->rootDir, $type );
+        
 
-            if(!empty($type)){
-                
-                $i = 0; 
-                while($i != count($arrayFiles['filesList'])) { 
-                    $filePath = $arrayFiles['filesList'][$i]; $explodeFile = explode("/", $arrayFiles['filesList'][$i]);
-                    echo'<tr>';
-                        echo '<td>';
-                            $filePath = key($arrayFiles['fileTypes']);
-                                if($filePath == 'pdf') { 
-                                    echo'<i class="fas fa-file-pdf fa-2x"  id="pdf"></i>';  
-                                } elseif(($filePath == 'txt' || ($filePath == 'doc') || ($filePath == 'docs')) ) { 
-                                    echo'<i class="fas fa-file-word fa-2x"  id="docs"></i>';
-                                } elseif(($filePath  == 'png') || ($filePath == 'jpg') || ($filePath == 'jpeg')) { 
-                                    echo'<i class="fas fa-file-image fa-2x"  id="image"></i>';
-                                } elseif(($filePath == 'ppt') || ($filePath == 'pptx')) {
-                                    echo'<i class="fas fa-file-powerpoint fa-2x" style="color:  #AA3C00;" id="powerpoint"></i>';
-                                } elseif(($filePath  == 'mp4') ||( $filePath == 'mov') || ($filePath == 'wmv') || ($filePath == 'avi')) {
-                                    echo'<i class="fas fa-file-video fa-2x"  id="video"></i>';
-                                } 
-                                echo '&nbsp;&nbsp;&nbsp;'.end($explodeFile).'</td>';
-                        echo '<td>'.date( "Y/m/d H:i:s", filemtime( $arrayFiles['filesList'][$i] )). '</td>';
-                        echo '<td>'. round((filesize( $arrayFiles['filesList'][$i] )) / 1024, 2). '.kb</td>';
-                        echo '<td>'.$explodeFile[6].'/'. $explodeFile[7]. `</td>`;
-                        '<td>'.$arrayFiles['filesList'][$i]. `</td>`;
-                        '</tr>';
-                $i++;
-                }
+            $data['title'] = 'Quick Filter';
+        
 
-                } 
+            $page = 'QuickFilter';
+            
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/'.$page, $data);
+            $this->load->view('templates/footer');
+
 
     }
 

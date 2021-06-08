@@ -107,7 +107,7 @@
   <script src="assets/js/vendors.bundle.js" aria-hidden="true"></script>
   <script src="assets/js/notifications/sweetalert2/sweetalert2.bundle.js" aria-hidden="true"></script>
   <script src="assets/js/app.bundle.js" aria-hidden="true"></script>
-  <script src="js/datagrid/datatables/datatables.bundle.js"></script>
+  <script src="assets/js/datagrid/datatables/datatables.bundle.js"></script>
   <!-- SWEET ALERT EXAMPLE1 JS-->
   <script>
 

@@ -24,6 +24,9 @@ class TitleController extends CI_Controller{
         }   
 
         $subject_id =  $this->input->post('subject_id');
+        $data['subject']=  $this->input->post('subject');
+        $data['subject_name'] =  $this->SubjectModel->fetchSubjectName($subject_id);
+
         $data['subjects'] = $this->SubjectModel->fetchSubject();
         $data['titles'] = $this->TitleModel->fetchTitle($subject_id);
         $data['title'] = "Blended Learning Resources";
@@ -62,9 +65,10 @@ class TitleController extends CI_Controller{
             // $data['path'] = directory_map('./files/', 1);
 
             $title_id =  $this->input->post('title_id');
-            $titlename =  $this->input->post('title');
+        
             // $titleview = $this->TitleModel->titleView($title_id);
             $data['titles'] = $this->TitleModel->titleView($title_id);
+
             $data['subjects'] = $this->SubjectModel->fetchSubject();
             $rootDir = 'assets/files';
             $filename =  $titlename;

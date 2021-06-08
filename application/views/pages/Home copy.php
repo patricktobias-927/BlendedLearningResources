@@ -35,7 +35,7 @@
                             
                                 <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
-                                        <button type="button" id="button" onclick="Filter()" class="btn" style="width: auto; margin: auto; ">
+                                        <button type="submit" class="btn" style="width: auto; margin: auto; ">
                                             <!--TYPE OF FILE-->
                                             <input style="display: none;" type="text" value="pdfs" name="type" id="type">
                                             <div class="card-body">
@@ -49,9 +49,9 @@
                             
                                 <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
-                                        <button type="button" id="button1" onclick="Filter1()" class="btn">
+                                        <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
-                                            <input style="display: none;" type="text" value="images" name="type" id="type1">
+                                            <input style="display: none;" type="text" value="images" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
                                                 <i class="fas fa-file-image fa-4x" id="image" style=""></i>
@@ -63,9 +63,9 @@
 
                                 <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
-                                        <button type="button" id="button2" onclick="Filter2()" class="btn">
+                                        <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
-                                            <input style="display: none;" type="text" value="videos" name="type" id="type2">
+                                            <input style="display: none;" type="text" value="videos" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
                                                 <i class="fas fa-file-video fa-4x" id="video" style=""></i>
@@ -77,9 +77,9 @@
 
                                 <div class="card text-center" style="background-color: #F5F5F5; height: 150px;">
                                     <form action="<?= base_url();?>filter" method="post">
-                                        <button type="button" id="button3" onclick="Filter3()" class="btn">
+                                        <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
-                                            <input style="display: none;" type="text" value="documents" name="type" id="type3">
+                                            <input style="display: none;" type="text" value="documents" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
                                                 <i class="fas fa-file-word fa-4x" id="docs" style=""></i>
@@ -91,9 +91,9 @@
 
                                 <div class="card text-center" style="background-color: #F5F5F5;">
                                     <form action="<?= base_url();?>filter" method="post">
-                                            <button type="button" id="button4" onclick="Filter4()" class="btn">
+                                            <button type="submit" class="btn">
                                             <!--TYPE OF FILE-->
-                                            <input style="display: none;" type="text" value="presentations" name="type" id="type4">
+                                            <input style="display: none;" type="text" value="presentations" name="type" id="type">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="visibility: hidden;"></h5>
                                                 <i class="fas fa-file-powerpoint fa-4x " id="ppt" style=""></i>
@@ -118,7 +118,7 @@
                                 <th>Name</th>
                                 <th>Last Update</th>
                                 <th col-spa>File size</th>
-                                <th style="" >Folder</th>
+                                <th style="display:none;" >Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -205,136 +205,13 @@
                 </div>
             </div>
         </div>
-<!-- 
-        <script  type="text/javascript" src="assets/js/filter.js"></script> -->
 
 
         <!--DOUBLE CLICK FUNCTION-->
         <script>
         $("td").dblclick(function() {
-        var set_subject = $(this).parent().find("#type").val();
+        var set_subject = $(this).parent().find("input").val();
         $("input#subject_id:text").val(set_subject);
         $("#title_id").submit();
         });
-
-
-        
-        $(document).ready(function(){
-                // Filter();
-            $("#button").click(function(){
-                let a = $(this).parent().find("#type").val();
-                console.log(a);
-                Filter();
-            });
-        });
-
-        $(document).ready(function(){
-                // Filter();
-            $("#button1").click(function(){
-                let a = $(this).parent().find("#type1").val();
-                console.log(a);
-                Filter1();
-            });
-        });
-
-        $(document).ready(function(){
-                // Filter();
-            $("#button2").click(function(){
-                let a = $(this).parent().find("#type2").val();
-                console.log(a);
-                Filter2();
-            });
-        });
-
-        $(document).ready(function(){
-                // Filter();
-            $("#button3").click(function(){
-                let a = $(this).parent().find("#type3").val();
-                console.log(a);
-                Filter3();
-            });
-        });
-
-        $(document).ready(function(){
-                // Filter();
-            $("#button4").click(function(){
-                let a = $(this).parent().find("#type4").val();
-                console.log(a);
-                Filter4();
-            });
-        });
-
-        function Filter() {
-           
-           var type = $("#type").val();
-           $.ajax({
-               url : "<?= base_url('syncer/filter') ?>",
-               data: "type=" + type,
-               success:function(data){
-                   console.log(data);
-                   // $("#table_section tbody").html('<tr><td colspan="4" align="center">PATRICK</td></tr>');
-                   $("#dt-basic-example tbody").html(data);
-               }
-           });
-       }
-
-       function Filter1() {
-           
-           var type = $("#type1").val();
-           $.ajax({
-               url : "<?= base_url('syncer/filter') ?>",
-               data: "type=" + type,
-               success:function(data){
-                   console.log(data);
-                   // $("#table_section tbody").html('<tr><td colspan="4" align="center">PATRICK</td></tr>');
-                   $("#dt-basic-example tbody").html(data);
-               }
-           });
-       }
-
-       function Filter2() {
-           
-           var type = $("#type2").val();
-           $.ajax({
-               url : "<?= base_url('syncer/filter') ?>",
-               data: "type=" + type,
-               success:function(data){
-                   console.log(data);
-                   // $("#table_section tbody").html('<tr><td colspan="4" align="center">PATRICK</td></tr>');
-                   $("#dt-basic-example tbody").html(data);
-               }
-           });
-       }
-
-       function Filter3() {
-           
-           var type = $("#type3").val();
-           $.ajax({
-               url : "<?= base_url('syncer/filter') ?>",
-               data: "type=" + type,
-               success:function(data){
-                   console.log(data);
-                   // $("#table_section tbody").html('<tr><td colspan="4" align="center">PATRICK</td></tr>');
-                   $("#dt-basic-example tbody").html(data);
-               }
-           });
-       }
-
-        function Filter4() {
-           
-            var type = $("#type4").val();
-            $.ajax({
-                url : "<?= base_url('syncer/filter') ?>",
-                data: "type=" + type,
-                success:function(data){
-                    console.log(data);
-                    // $("#table_section tbody").html('<tr><td colspan="4" align="center">PATRICK</td></tr>');
-                    $("#dt-basic-example tbody").html(data);
-                }
-            });
-        }
-        
         </script>
-
-
-        

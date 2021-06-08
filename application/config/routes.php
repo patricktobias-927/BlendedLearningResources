@@ -53,6 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['index'] = 'Syncer/index';
 //filter
 $route['filter'] = 'Syncer/filter';
+//Open Directory
+$route['open_dir'] = 'Syncer/open_dir';
+
 
 //HOME
 // $route['home'] = 'HomeController/index';
